@@ -1,0 +1,59 @@
+/* ============================================================
+   Typography — editorial serif voice (EB Garamond) with a
+   quiet sans for micro-labels. Elegant, calm, generous.
+   ============================================================ */
+
+body {
+  font-family: var(--font-serif);
+  font-size: var(--fs-body);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  line-height: var(--lh-tight);
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+}
+
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+
+p {
+  max-width: 66ch;
+}
+
+strong { font-weight: 600; }
+
+em { font-style: italic; }
+
+/* Small uppercase label used above section titles ("eyebrow"). */
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--fs-eyebrow);
+  font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.lead {
+  font-size: var(--fs-lead);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--color-accent-deep);
+  transition: color var(--dur-fast) var(--ease);
+}
+
+a:hover {
+  color: var(--color-accent);
+}

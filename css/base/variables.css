@@ -1,0 +1,58 @@
+/* ============================================================
+   Design tokens — the single source of truth for the visual
+   language. Palette: neutral / nude / coffee. Editorial serif.
+   ============================================================ */
+
+:root {
+  /* --- Colour palette: warm neutrals & coffee ------------- */
+  --color-bg:            #f6f1ea; /* warm cream — page background   */
+  --color-surface:       #fbf8f3; /* cards, elevated surfaces       */
+  --color-surface-alt:   #efe7db; /* subtle alternating sections    */
+  --color-text:          #33291f; /* dark espresso — primary text   */
+  --color-text-muted:    #7a6e60; /* mocha grey — secondary text    */
+  --color-accent:        #9c7a54; /* caramel — links, highlights    */
+  --color-accent-deep:   #6f5137; /* roasted coffee — hover/active   */
+  --color-line:          #e3d9cc; /* hairline borders               */
+  --color-shadow:        rgba(78, 58, 38, 0.10);
+
+  /* --- Typography ---------------------------------------- */
+  --font-serif: "EB Garamond", "Garamond", "Adobe Garamond Pro",
+                "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-sans:  "Inter", system-ui, -apple-system, "Segoe UI", Helvetica,
+                Arial, sans-serif;
+
+  --fs-eyebrow:  0.78rem;   /* small uppercase labels             */
+  --fs-body:     1.075rem;
+  --fs-lead:     1.28rem;
+  --fs-h3:       1.5rem;
+  --fs-h2:       clamp(1.9rem, 3.5vw, 2.75rem);
+  --fs-h1:       clamp(2.8rem, 7vw, 5rem);
+
+  --lh-tight:  1.15;
+  --lh-body:   1.7;
+
+  --tracking-wide: 0.22em;  /* letter-spacing for eyebrows        */
+
+  /* --- Spacing scale (rem) ------------------------------- */
+  --space-2xs: 0.25rem;
+  --space-xs:  0.5rem;
+  --space-sm:  0.875rem;
+  --space-md:  1.25rem;
+  --space-lg:  2rem;
+  --space-xl:  3.25rem;
+  --space-2xl: 5rem;
+  --space-3xl: 8rem;
+
+  /* --- Layout -------------------------------------------- */
+  --content-max: 1160px;
+  --content-narrow: 760px;
+  --radius-sm: 4px;
+  --radius-md: 10px;
+  --radius-lg: 18px;
+
+  /* --- Motion -------------------------------------------- */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur-fast: 180ms;
+  --dur:      340ms;
+  --dur-slow: 620ms;
+}

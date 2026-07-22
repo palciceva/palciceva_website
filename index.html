@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Eva Palčič · Hispanista e italianista</title>
+  <meta name="description"
+        content="Eva Palčič — hispanista e italianista. Clases de español e italiano, corrección de textos y traducción. Lengua, literatura y pasión por las palabras." />
+  <meta name="author" content="Eva Palčič" />
+
+  <!-- Open Graph / social preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Eva Palčič · Hispanista e italianista" />
+  <meta property="og:description"
+        content="Clases de español e italiano, corrección de textos y traducción." />
+  <meta property="og:image" content="assets/images/portrait-large.jpg" />
+
+  <!-- Fonts: EB Garamond (serif voice) + Inter (micro-labels) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/main.css" />
+  <script type="module" src="js/main.js"></script>
+</head>
+
+<body>
+  <a class="visually-hidden" href="#main">Saltar al contenido</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="#top">Eva Palčič</a>
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="#servicios">Servicios</a>
+        <a href="#proyectos">Proyectos</a>
+        <a class="nav__cta link-underline" href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO / INTRO ============ -->
+    <section class="hero" id="top">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <span class="eyebrow reveal">Hispanista · Italianista · Lingüista</span>
+          <h1 class="hero__title reveal">
+            Palabras que <span class="accent">cuidan</span>,<br />
+            lenguas que <span class="accent">acercan</span>
+          </h1>
+          <p class="hero__roles reveal">
+            <span>Español</span><span>Italiano</span><span>Esloveno</span><span>Inglés</span>
+          </p>
+          <p class="hero__intro reveal">
+            Soy Eva Palčič, hispanista e italianista apasionada por la lengua y
+            la literatura. Tras trabajar en editoriales, escuelas de idiomas y
+            revistas, emprendo mi propio camino para acompañar a otras personas
+            en su relación con las palabras: enseñando, corrigiendo y traduciendo
+            con mimo, disciplina y una buena dosis de creatividad.
+          </p>
+          <div class="hero__actions reveal">
+            <a class="btn btn--primary" href="#servicios">Descubre mis servicios</a>
+            <a class="btn btn--ghost" href="#contacto">Hablemos</a>
+          </div>
+        </div>
+
+        <figure class="hero__portrait reveal">
+          <img
+            src="assets/images/portrait-large.jpg"
+            srcset="assets/images/portrait-small.jpg 700w,
+                    assets/images/portrait-large.jpg 1200w"
+            sizes="(max-width: 860px) 300px, 380px"
+            width="1200" height="1600"
+            alt="Retrato de Eva Palčič en una calle del casco antiguo de Liubliana."
+            loading="eager" />
+        </figure>
+      </div>
+    </section>
+
+    <div class="container"><hr class="divider" /></div>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="section services" id="servicios">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Qué ofrezco</span>
+          <h2>Tres formas de trabajar juntas con la lengua</h2>
+        </div>
+        <!-- Cards rendered from js/data/content.js -->
+        <div class="services__grid" id="services-grid" data-reveal-stagger></div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section projects" id="proyectos">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Más allá del trabajo</span>
+          <h2>Proyectos personales</h2>
+        </div>
+        <!-- Cards rendered from js/data/content.js -->
+        <div class="projects__grid" id="projects-grid"></div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contacto">
+      <div class="container container--narrow reveal">
+        <span class="eyebrow">Contacto</span>
+        <h2 class="contact__title">¿Empezamos a <em>escribir</em> algo juntas?</h2>
+        <p class="contact__text">
+          Cuéntame en qué idioma sueñas, qué texto quieres pulir o a dónde
+          quieres llegar. Estaré encantada de acompañarte.
+        </p>
+        <div class="contact__actions">
+          <a class="btn btn--primary" href="mailto:palciceva9@gmail.com">
+            Escríbeme un correo
+          </a>
+          <a class="btn btn--ghost"
+             href="https://www.instagram.com/cafeconletras89.5/"
+             target="_blank" rel="noopener noreferrer">
+            Sígueme en Café con letras
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <span class="site-footer__brand">Eva Palčič</span>
+      <ul class="social-links" aria-label="Redes sociales">
+        <li>
+          <a href="mailto:palciceva9@gmail.com" aria-label="Correo electrónico"
+             data-icon="mail"></a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/cafeconletras89.5/" target="_blank"
+             rel="noopener noreferrer" aria-label="Instagram · Café con letras"
+             data-icon="instagram"></a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/evapalčič" target="_blank"
+             rel="noopener noreferrer" aria-label="LinkedIn" data-icon="linkedin"></a>
+        </li>
+      </ul>
+      <span class="site-footer__copy">© <span id="year"></span> Eva Palčič</span>
+    </div>
+  </footer>
+
+  <!-- Shared dialog: content injected by js/modules/modal.js -->
+  <dialog class="modal" id="service-modal" aria-modal="true"></dialog>
+</body>
+</html>

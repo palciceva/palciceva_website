@@ -1,0 +1,61 @@
+/* ============================================================
+   Layout primitives — reusable structural helpers shared by
+   all sections (container, section rhythm, dividers).
+   ============================================================ */
+
+.container {
+  width: 100%;
+  max-width: var(--content-max);
+  margin-inline: auto;
+  padding-inline: var(--space-lg);
+}
+
+.container--narrow {
+  max-width: var(--content-narrow);
+}
+
+.section {
+  padding-block: var(--space-3xl);
+}
+
+.section--tight {
+  padding-block: var(--space-2xl);
+}
+
+/* Section heading block: eyebrow + title, consistently spaced. */
+.section-head {
+  margin-bottom: var(--space-xl);
+}
+
+.section-head .eyebrow {
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.section-head h2 {
+  max-width: 22ch;
+}
+
+/* Visually hidden but available to screen readers. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.divider {
+  height: 1px;
+  background: var(--color-line);
+  border: none;
+}
+
+@media (max-width: 640px) {
+  .container { padding-inline: var(--space-md); }
+  .section { padding-block: var(--space-2xl); }
+}

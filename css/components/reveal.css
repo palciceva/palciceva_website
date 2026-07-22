@@ -1,0 +1,43 @@
+/* ============================================================
+   Reveal-on-scroll — quiet entrance animation driven by the
+   IntersectionObserver in js/modules/reveal.js.
+   ============================================================ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity var(--dur-slow) var(--ease),
+              transform var(--dur-slow) var(--ease);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Stagger children when a container carries data-reveal-stagger. */
+.reveal[data-reveal-stagger] > * {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity var(--dur-slow) var(--ease),
+              transform var(--dur-slow) var(--ease);
+}
+
+.reveal[data-reveal-stagger].is-visible > * {
+  opacity: 1;
+  transform: none;
+}
+
+.reveal[data-reveal-stagger].is-visible > *:nth-child(2) { transition-delay: 90ms; }
+.reveal[data-reveal-stagger].is-visible > *:nth-child(3) { transition-delay: 180ms; }
+.reveal[data-reveal-stagger].is-visible > *:nth-child(4) { transition-delay: 270ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal[data-reveal-stagger] > * {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

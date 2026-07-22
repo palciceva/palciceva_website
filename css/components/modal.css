@@ -1,0 +1,180 @@
+/* ============================================================
+   Modal — the detailed view of each service. Built on the
+   native <dialog> element for accessibility (focus trap, Esc).
+   ============================================================ */
+
+.modal {
+  width: min(720px, calc(100vw - 2rem));
+  max-height: min(86vh, 900px);
+  padding: 0;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  box-shadow: 0 40px 90px -40px rgba(58, 42, 26, 0.5);
+  overflow: hidden;
+}
+
+.modal::backdrop {
+  background-color: rgba(40, 30, 20, 0.42);
+  backdrop-filter: blur(3px);
+}
+
+/* Entry animation */
+.modal[open] {
+  animation: modal-in var(--dur) var(--ease);
+}
+.modal[open]::backdrop {
+  animation: backdrop-in var(--dur) var(--ease);
+}
+
+@keyframes modal-in {
+  from { opacity: 0; transform: translateY(12px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes backdrop-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.modal__scroll {
+  max-height: min(86vh, 900px);
+  overflow-y: auto;
+}
+
+.modal__header {
+  position: relative;
+  padding: var(--space-xl) var(--space-xl) var(--space-lg);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.modal__index {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  color: var(--color-accent);
+  margin-bottom: var(--space-xs);
+}
+
+.modal__title {
+  font-size: 2.1rem;
+}
+
+.modal__close {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--color-text-muted);
+  transition: background-color var(--dur-fast) var(--ease),
+              color var(--dur-fast) var(--ease);
+}
+
+.modal__close:hover {
+  background-color: var(--color-surface-alt);
+  color: var(--color-text);
+}
+
+.modal__body {
+  padding: var(--space-lg) var(--space-xl) var(--space-xl);
+}
+
+.modal__intro {
+  font-size: var(--fs-lead);
+  font-style: italic;
+  color: var(--color-text);
+  line-height: 1.6;
+  margin-bottom: var(--space-xl);
+  padding-left: var(--space-md);
+  border-left: 2px solid var(--color-accent);
+}
+
+/* Detail sub-sections inside the modal */
+.modal-section {
+  margin-bottom: var(--space-xl);
+}
+
+.modal-section:last-child { margin-bottom: 0; }
+
+.modal-section__label {
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-md);
+}
+
+/* Experience entries */
+.experience-item {
+  padding-bottom: var(--space-md);
+  margin-bottom: var(--space-md);
+  border-bottom: 1px solid var(--color-line);
+}
+.experience-item:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.experience-item__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-2xs);
+}
+
+.experience-item__role {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.experience-item__date {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.experience-item__org {
+  color: var(--color-accent-deep);
+  font-style: italic;
+  margin-bottom: var(--space-xs);
+}
+
+.experience-item__desc {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Skill chips */
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.skill-list li {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  color: var(--color-text);
+  padding: 0.4em 0.9em;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-line);
+  border-radius: 100px;
+}
+
+@media (max-width: 640px) {
+  .modal__header { padding: var(--space-lg) var(--space-lg) var(--space-md); }
+  .modal__body { padding: var(--space-md) var(--space-lg) var(--space-lg); }
+  .modal__title { font-size: 1.7rem; }
+}

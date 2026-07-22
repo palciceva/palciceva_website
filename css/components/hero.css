@@ -1,0 +1,92 @@
+/* ============================================================
+   Hero / introduction — portrait + a personal opening note.
+   Two-column on desktop, stacked on mobile.
+   ============================================================ */
+
+.hero {
+  padding-block: var(--space-3xl) var(--space-2xl);
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+
+.hero__content .eyebrow {
+  display: block;
+  margin-bottom: var(--space-md);
+}
+
+.hero__title {
+  margin-bottom: var(--space-md);
+}
+
+.hero__title .accent {
+  font-style: italic;
+  color: var(--color-accent);
+}
+
+.hero__roles {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-lg);
+}
+
+.hero__roles span:not(:last-child)::after {
+  content: "·";
+  margin-inline: 0.6em;
+  color: var(--color-accent);
+}
+
+.hero__intro {
+  font-size: var(--fs-lead);
+  line-height: 1.62;
+  color: var(--color-text);
+  margin-bottom: var(--space-lg);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+/* --- Portrait --- */
+.hero__portrait {
+  position: relative;
+  justify-self: center;
+}
+
+.hero__portrait img {
+  width: 100%;
+  max-width: 380px;
+  border-radius: var(--radius-lg);
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  box-shadow: 0 30px 60px -30px var(--color-shadow);
+}
+
+/* Framed accent line behind the portrait for an editorial feel. */
+.hero__portrait::before {
+  content: "";
+  position: absolute;
+  inset: -14px -14px 14px 14px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  z-index: -1;
+}
+
+@media (max-width: 860px) {
+  .hero { padding-block: var(--space-2xl); }
+  .hero__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+  .hero__portrait { order: -1; }
+  .hero__portrait img { max-width: 300px; }
+}
