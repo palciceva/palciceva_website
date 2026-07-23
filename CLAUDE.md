@@ -17,10 +17,21 @@ The site presents her **services** and **personal projects**:
   1. **Clases** — Spanish & Italian language classes.
   2. **Corrección** — proofreading / text correction.
   3. **Traducción** — translation (ES / IT / SL / EN).
+- **Educación** — academic timeline (degrees) + a "Formación complementaria"
+  card with courses. Data-driven from `content.js` (`education`, `courses`).
 - **Proyectos** — personal projects, e.g. **Café con letras**
   (Instagram: https://www.instagram.com/cafeconletras89.5/) and a future
   "Biblioteca virtual".
 - **Contacto** — email + social links.
+
+- **Cultura (gallery)** — a horizontal scroll-snap photo carousel between
+  Educación and Contacto, with a centred uppercase sans title ("Vivir la
+  cultura es entender el idioma"). Data-driven from `content.js` (`gallery`);
+  the tiles in `assets/images/gallery/` are **placeholders** to be replaced
+  with real ~4:5 photos. Not in the nav (yet).
+
+Section order: Servicios → Proyectos → Educación → Cultura → Contacto.
+Nav order: Servicios → Proyectos → Educación → Contacto.
 
 Primary language of the site: **Spanish** (her brand and audience are
 Spanish-speaking). Keep copy warm, personal, and professional.
@@ -32,11 +43,32 @@ Deployment target: **GitHub Pages** (repo `palciceva/palciceva_website`).
 ## 2 · Eva's style preferences (design north star)
 
 - **Minimalist but elegant.** Lots of whitespace, calm rhythm, nothing loud.
-- **Font: Garamond.** We use **EB Garamond** (Google Fonts) as the serif voice,
-  with `Inter` only for tiny uppercase micro-labels ("eyebrows").
-- **Palette: neutral / nude / coffee.** Warm creams, espresso text, caramel
-  accent. Defined as tokens in `css/base/variables.css` — change the whole skin
-  from there.
+- **Fonts (experiment):** Eva picked **Adrianna** (sans) and **Goldenbook**
+  (serif) from a reference. Both are *commercial* fonts (not on Google Fonts),
+  so the site currently uses close free stand-ins: **Cormorant Garamond** for
+  the serif voice (Goldenbook) and **Jost** for the uppercase micro-labels /
+  nav (Adrianna). If Eva provides the licensed Adrianna/Goldenbook files, embed
+  them in `assets/fonts/` via `@font-face` and update `--font-serif` /
+  `--font-sans` — no other change needed. Body weight is 500 (Cormorant renders
+  light). She likes Garamond-style serifs generally.
+- **Palette: sage / olive / cream / espresso** (Eva's chosen swatches).
+  Defined as tokens in `css/base/variables.css` — change the whole skin there.
+  Source swatches & their roles:
+  1. **Espresso** `#332821` → `--color-text`, primary text (dark brown).
+  2. **Cream** `#E9E1D2` → `--color-surface-alt` (the alternating section
+     background); the page `--color-bg` is a lifted cream `#f2ece1`, cards
+     `--color-surface` a near-white `#f8f4ec`.
+  3. **Sage** `#868264` → `--color-accent`, the highlight tone: title accents
+     (lenguas/letras/culturas), service icons, "Descubre mis servicios" hover.
+     Its translucent form `--color-accent-glass` is used by all `.eyebrow`
+     labels and the service-card borders/numbers/"Ver más".
+  4. **Taupe** `#86755F` → `--color-text-muted`, secondary text.
+  5. **Dark olive** `#5B563B` → `--color-accent-deep`, links / hover.
+  White is fine for small details. Keep the soft background **change between
+  sections** (Proyectos uses `--color-surface-alt`); Eva likes that alternation.
+  NOTE: palette is still being tuned — she may keep iterating on colours.
+  (A gold-accent + rotating-seal + script-signature experiment was tried and
+  reverted — Eva did not like the gold. Avoid re-introducing gold unprompted.)
 - **Modern, refined vibe.** Editorial feel, subtle motion (reveal-on-scroll),
   tactile hover states.
 

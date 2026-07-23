@@ -8,7 +8,7 @@
  */
 
 import { icons } from "./icons.js";
-import { escapeHtml } from "./utils.js";
+import { escapeHtml, escapeWithEmphasis } from "./utils.js";
 
 /**
  * Build the inner HTML for a service's detail view.
@@ -16,34 +16,45 @@ import { escapeHtml } from "./utils.js";
  */
 function renderModalContent(service) {
   const experienceHtml = service.experience
-    .map(
-      (item) => `
+    .map((item) => {
+      // `desc` may be a single string or several paragraphs.
+      const descHtml = (Array.isArray(item.desc) ? item.desc : [item.desc])
+        .map((para) => `<p class="experience-item__desc">${escapeWithEmphasis(para)}</p>`)
+        .join("");
+      return `
       <article class="experience-item">
         <div class="experience-item__head">
           <h4 class="experience-item__role">${escapeHtml(item.role)}</h4>
           <span class="experience-item__date">${escapeHtml(item.date)}</span>
         </div>
         <p class="experience-item__org">${escapeHtml(item.org)}</p>
-        <p class="experience-item__desc">${escapeHtml(item.desc)}</p>
-      </article>`
-    )
+        ${descHtml}
+      </article>`;
+    })
     .join("");
 
   const skillsHtml = service.skills
     .map((skill) => `<li>${escapeHtml(skill)}</li>`)
     .join("");
 
+  // `intro` is an array of paragraphs.
+  const introHtml = service.intro
+    .map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`)
+    .join("");
+
+  const title = service.modalTitle || service.title;
+
   return `
     <div class="modal__scroll">
       <header class="modal__header">
         <p class="modal__index">${escapeHtml(service.index)}</p>
-        <h3 class="modal__title" id="modal-title">${escapeHtml(service.title)}</h3>
+        <h3 class="modal__title" id="modal-title">${escapeHtml(title)}</h3>
         <button class="modal__close" type="button" data-close aria-label="Cerrar">
           ${icons.close}
         </button>
       </header>
       <div class="modal__body">
-        <p class="modal__intro">${escapeHtml(service.intro)}</p>
+        <div class="modal__intro">${introHtml}</div>
 
         <section class="modal-section">
           <p class="modal-section__label">Experiencia</p>

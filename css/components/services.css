@@ -3,6 +3,11 @@
    Traducción. Each card opens a detail modal on click.
    ============================================================ */
 
+/* Let the section title breathe on a single line. */
+.services .section-head h2 {
+  max-width: none;
+}
+
 .services__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -16,12 +21,14 @@
   text-align: left;
   width: 100%;
   padding: var(--space-xl) var(--space-lg) var(--space-lg);
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-line);
+  /* Stronger sage fill (colour block) with a light cream border. */
+  background-color: color-mix(in srgb, var(--color-accent) 44%, var(--color-surface));
+  border: 1px solid color-mix(in srgb, #ffffff 45%, var(--color-surface));
   border-radius: var(--radius-md);
   color: var(--color-text);
   transition: transform var(--dur) var(--ease),
               box-shadow var(--dur) var(--ease),
+              background-color var(--dur) var(--ease),
               border-color var(--dur) var(--ease);
 }
 
@@ -29,31 +36,17 @@
 .service-card:focus-visible {
   transform: translateY(-6px);
   box-shadow: 0 24px 44px -28px var(--color-shadow);
-  border-color: var(--color-accent);
-}
-
-.service-card__index {
-  font-family: var(--font-sans);
-  font-size: 0.78rem;
-  letter-spacing: 0.16em;
-  color: var(--color-accent);
-  margin-bottom: var(--space-md);
-}
-
-.service-card__icon {
-  width: 34px;
-  height: 34px;
-  margin-bottom: var(--space-md);
-  color: var(--color-accent-deep);
+  background-color: color-mix(in srgb, var(--color-accent) 52%, var(--color-surface));
 }
 
 .service-card__title {
-  font-size: 1.7rem;
-  margin-bottom: var(--space-xs);
+  font-size: clamp(2.1rem, 2.6vw, 2.6rem);
+  line-height: 1.1;
+  margin-bottom: var(--space-sm);
 }
 
 .service-card__tagline {
-  color: var(--color-text-muted);
+  color: var(--color-text);
   font-size: 1.02rem;
   line-height: 1.55;
   margin-bottom: var(--space-lg);

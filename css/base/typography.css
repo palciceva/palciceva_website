@@ -6,6 +6,9 @@
 body {
   font-family: var(--font-serif);
   font-size: var(--fs-body);
+  /* Cormorant renders lighter than most serifs — 500 keeps body text
+     comfortable to read. */
+  font-weight: 500;
   color: var(--color-text);
   background-color: var(--color-bg);
 }
@@ -15,7 +18,7 @@ h2,
 h3,
 h4 {
   font-family: var(--font-serif);
-  font-weight: 500;
+  font-weight: 600;
   line-height: var(--lh-tight);
   letter-spacing: -0.01em;
   color: var(--color-text);
@@ -40,7 +43,8 @@ em { font-style: italic; }
   font-weight: 500;
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
-  color: var(--color-accent);
+  /* Soft, glassy sage — same tone as the "Hispanista · Italianista" line. */
+  color: var(--color-accent-glass);
 }
 
 .lead {

@@ -17,3 +17,15 @@ export function escapeHtml(value) {
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#39;");
 }
+
+/**
+ * Escape a string, then turn a lightweight *emphasis* marker into <em>.
+ * Escaping runs first, so only our own asterisk markers become markup —
+ * any real HTML in the text stays inert. Use for copy that needs a word
+ * or two in italics (e.g. a magazine title).
+ * @param {string} value
+ * @returns {string}
+ */
+export function escapeWithEmphasis(value) {
+  return escapeHtml(value).replace(/\*([^*]+)\*/g, "<em>$1</em>");
+}

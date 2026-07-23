@@ -15,8 +15,6 @@ function renderCard(service) {
     <button class="service-card reveal" type="button"
             data-service="${escapeHtml(service.id)}"
             aria-haspopup="dialog">
-      <span class="service-card__index">${escapeHtml(service.index)}</span>
-      <span class="service-card__icon">${icons[service.icon] || ""}</span>
       <span class="service-card__title">${escapeHtml(service.title)}</span>
       <span class="service-card__tagline">${escapeHtml(service.tagline)}</span>
       <span class="service-card__more">

@@ -1,0 +1,131 @@
+/* ============================================================
+   Education — academic timeline + complementary courses.
+   Two columns on desktop (studies | courses), stacked on mobile.
+   ============================================================ */
+
+.education__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+/* --- Studies timeline --- */
+.edu-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: var(--space-md);
+  padding-bottom: var(--space-lg);
+}
+
+.edu-item:not(:last-child) {
+  margin-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.edu-item__date {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  color: var(--color-accent);
+  padding-top: 0.35em;
+}
+
+.edu-item__degree {
+  font-size: 1.35rem;
+  margin-bottom: var(--space-2xs);
+}
+
+.edu-item__org {
+  color: var(--color-text-muted);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.edu-item__loc {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  color: var(--color-text-muted);
+  margin-top: var(--space-2xs);
+}
+
+/* --- Graduation photo (under the degrees) --- */
+.education__photo {
+  margin-top: var(--space-xl);
+  max-width: 360px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.education__photo img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 28%;
+}
+
+/* --- Complementary courses --- */
+.education__courses {
+  padding: var(--space-lg) var(--space-lg) var(--space-md);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+}
+
+.education__courses-label {
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-lg);
+}
+
+.course-item {
+  padding-bottom: var(--space-md);
+  margin-bottom: var(--space-md);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.course-item:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.course-item__date {
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2xs);
+}
+
+.course-item__title {
+  font-size: 1.08rem;
+  line-height: 1.4;
+  margin-bottom: var(--space-2xs);
+}
+
+.course-item__org {
+  color: var(--color-text-muted);
+  font-style: italic;
+  font-size: 0.98rem;
+}
+
+@media (max-width: 860px) {
+  .education__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+}
+
+@media (max-width: 520px) {
+  .edu-item {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xs);
+  }
+  .edu-item__date { padding-top: 0; }
+}

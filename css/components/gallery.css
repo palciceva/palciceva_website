@@ -1,0 +1,88 @@
+/* ============================================================
+   Gallery — a centred statement title over a horizontal,
+   scroll-snapping photo carousel ("living the culture").
+   ============================================================ */
+
+.gallery {
+  text-align: center;
+}
+
+/* Statement title in the sans voice (Adrianna → Jost), uppercase. */
+.gallery__title {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: clamp(1.05rem, 1.9vw, 1.55rem);
+  line-height: 1.5;
+  color: var(--color-text);
+  max-width: 22ch;
+  margin: 0 auto var(--space-2xl);
+}
+
+/* Horizontal scroller — full-bleed, snaps tile to tile. */
+.gallery__viewport {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.gallery__viewport::-webkit-scrollbar { display: none; }
+
+.gallery__track {
+  display: flex;
+  column-gap: var(--space-md);
+  /* Align first/last tile with the page gutter. */
+  padding-inline: max(var(--space-lg), calc((100vw - var(--content-max)) / 2));
+}
+
+.gallery__item {
+  flex: 0 0 auto;
+  width: clamp(220px, 25vw, 320px);
+  aspect-ratio: 4 / 5;
+  scroll-snap-align: center;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface-alt);
+}
+
+.gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--dur-slow) var(--ease);
+}
+
+.gallery__item:hover img {
+  transform: scale(1.04);
+}
+
+/* Prev / next controls */
+.gallery__controls {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-xl);
+}
+
+.gallery__btn {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--color-line);
+  border-radius: 50%;
+  color: var(--color-text-muted);
+  transition: color var(--dur-fast) var(--ease),
+              border-color var(--dur-fast) var(--ease),
+              transform var(--dur-fast) var(--ease);
+}
+
+.gallery__btn:hover {
+  color: var(--color-accent-deep);
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.gallery__btn svg { width: 18px; height: 18px; }

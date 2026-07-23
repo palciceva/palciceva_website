@@ -4,21 +4,30 @@
    ============================================================ */
 
 :root {
-  /* --- Colour palette: warm neutrals & coffee ------------- */
-  --color-bg:            #f6f1ea; /* warm cream — page background   */
-  --color-surface:       #fbf8f3; /* cards, elevated surfaces       */
-  --color-surface-alt:   #efe7db; /* subtle alternating sections    */
-  --color-text:          #33291f; /* dark espresso — primary text   */
-  --color-text-muted:    #7a6e60; /* mocha grey — secondary text    */
-  --color-accent:        #9c7a54; /* caramel — links, highlights    */
-  --color-accent-deep:   #6f5137; /* roasted coffee — hover/active   */
-  --color-line:          #e3d9cc; /* hairline borders               */
-  --color-shadow:        rgba(78, 58, 38, 0.10);
+  /* --- Colour palette: sage / olive / cream / espresso ----
+     Source swatches:
+       #5B563B dark olive · #868264 sage · #E9E1D2 cream
+       #86755F taupe      · #332821 espresso
+     ------------------------------------------------------- */
+  --color-bg:            #f2ece1; /* light cream (cream swatch, lifted) */
+  --color-surface:       #f8f4ec; /* near-white warm — cards            */
+  --color-surface-alt:   #e9e1d2; /* cream swatch — alternating section */
+  --color-text:          #332821; /* espresso — primary text            */
+  --color-text-muted:    #86755f; /* taupe — secondary text             */
+  --color-accent:        #868264; /* sage — highlights                  */
+  --color-accent-deep:   #5b563b; /* dark olive — links/hover           */
+  --color-line:          #ddd4c4; /* warm hairline borders              */
+  --color-shadow:        rgba(51, 40, 33, 0.10);
 
-  /* --- Typography ---------------------------------------- */
-  --font-serif: "EB Garamond", "Garamond", "Adobe Garamond Pro",
-                "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  --font-sans:  "Inter", system-ui, -apple-system, "Segoe UI", Helvetica,
+  /* Soft, translucent "glassy" sage for eyebrow labels. */
+  --color-accent-glass:  color-mix(in srgb, var(--color-accent) 60%, transparent);
+
+  /* --- Typography ----------------------------------------
+     Serif  ("Goldenbook" → Cormorant Garamond stand-in)
+     Sans   ("Adrianna"   → Jost stand-in)               */
+  --font-serif: "Cormorant Garamond", "EB Garamond", Georgia,
+                "Times New Roman", serif;
+  --font-sans:  "Jost", system-ui, -apple-system, "Segoe UI", Helvetica,
                 Arial, sans-serif;
 
   --fs-eyebrow:  0.78rem;   /* small uppercase labels             */

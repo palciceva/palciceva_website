@@ -19,8 +19,11 @@
   <!-- Fonts: EB Garamond (serif voice) + Inter (micro-labels) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Type: Cormorant Garamond ≈ "Goldenbook" (serif) · Jost ≈ "Adrianna" (sans).
+       Adrianna & Goldenbook are commercial fonts; these are close free stand-ins.
+       Swap in the licensed files via assets/fonts/ + @font-face when available. -->
   <link
-    href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&display=swap"
     rel="stylesheet" />
 
   <link rel="stylesheet" href="css/main.css" />
@@ -37,7 +40,8 @@
       <nav class="nav" aria-label="Navegación principal">
         <a href="#servicios">Servicios</a>
         <a href="#proyectos">Proyectos</a>
-        <a class="nav__cta link-underline" href="#contacto">Contacto</a>
+        <a href="#educacion">Educación</a>
+        <a class="nav__cta" href="#contacto">Contacto</a>
       </nav>
     </div>
   </header>
@@ -47,21 +51,28 @@
     <section class="hero" id="top">
       <div class="container hero__grid">
         <div class="hero__content">
-          <span class="eyebrow reveal">Hispanista · Italianista · Lingüista</span>
+          <span class="eyebrow reveal">Hispanista · Italianista</span>
           <h1 class="hero__title reveal">
-            Palabras que <span class="accent">cuidan</span>,<br />
-            lenguas que <span class="accent">acercan</span>
+            Entre <span class="accent">lenguas</span>,<br />
+            <span class="accent">letras</span> y <span class="accent">culturas</span>
           </h1>
           <p class="hero__roles reveal">
-            <span>Español</span><span>Italiano</span><span>Esloveno</span><span>Inglés</span>
+            <span>Clases</span><span>Corrección</span><span>Traducción</span>
           </p>
-          <p class="hero__intro reveal">
-            Soy Eva Palčič, hispanista e italianista apasionada por la lengua y
-            la literatura. Tras trabajar en editoriales, escuelas de idiomas y
-            revistas, emprendo mi propio camino para acompañar a otras personas
-            en su relación con las palabras: enseñando, corrigiendo y traduciendo
-            con mimo, disciplina y una buena dosis de creatividad.
-          </p>
+          <div class="hero__intro reveal">
+            <p>
+              Soy Eva Palčič, hispanista e italianista apasionada por los
+              idiomas, la literatura y las culturas que les dan vida. Mi trabajo
+              nace de una convicción: aprender una lengua no es solo conocer sus
+              palabras y reglas gramaticales, sino también acercarse a su
+              historia, a sus acentos, a su gente y a su manera de entender el
+              mundo.
+            </p>
+            <p>
+              Desde esa mirada, enseño, corrijo, escribo y traduzco con cuidado,
+              disciplina y creatividad.
+            </p>
+          </div>
           <div class="hero__actions reveal">
             <a class="btn btn--primary" href="#servicios">Descubre mis servicios</a>
             <a class="btn btn--ghost" href="#contacto">Hablemos</a>
@@ -88,7 +99,7 @@
       <div class="container">
         <div class="section-head reveal">
           <span class="eyebrow">Qué ofrezco</span>
-          <h2>Tres formas de trabajar juntas con la lengua</h2>
+          <h2>Tres formas de trabajar con la lengua</h2>
         </div>
         <!-- Cards rendered from js/data/content.js -->
         <div class="services__grid" id="services-grid" data-reveal-stagger></div>
@@ -107,14 +118,70 @@
       </div>
     </section>
 
+    <!-- ============ EDUCATION ============ -->
+    <section class="section education" id="educacion">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Formación</span>
+          <h2>Educación</h2>
+        </div>
+        <div class="education__grid">
+          <!-- Degrees timeline (+ graduation photo) -->
+          <div class="education__main">
+            <div id="education-list"></div>
+            <figure class="education__photo reveal">
+              <img
+                src="assets/images/graduation-large.jpg"
+                srcset="assets/images/graduation-small.jpg 480w,
+                        assets/images/graduation-large.jpg 880w"
+                sizes="(max-width: 860px) 100vw, 360px"
+                width="880" height="1173"
+                alt="Eva el día de su graduación, frente a la Filozofska fakulteta de la Universidad de Liubliana, con su tesis y un ramo de flores."
+                loading="lazy" />
+            </figure>
+          </div>
+          <!-- Complementary courses -->
+          <aside class="education__courses reveal">
+            <p class="education__courses-label">Formación complementaria</p>
+            <div id="courses-list"></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GALLERY / CULTURE ============ -->
+    <section class="section gallery" id="cultura">
+      <div class="container">
+        <h2 class="gallery__title reveal">Vivir la cultura es entender el idioma</h2>
+      </div>
+      <div class="gallery__viewport">
+        <!-- Tiles rendered from js/data/content.js -->
+        <div class="gallery__track" id="gallery-track"></div>
+      </div>
+      <div class="gallery__controls">
+        <button class="gallery__btn" type="button" data-gallery-prev
+                aria-label="Foto anterior">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true"><path d="M15 18l-6-6 6-6" /></svg>
+        </button>
+        <button class="gallery__btn" type="button" data-gallery-next
+                aria-label="Foto siguiente">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true"><path d="M9 18l6-6-6-6" /></svg>
+        </button>
+      </div>
+    </section>
+
     <!-- ============ CONTACT ============ -->
     <section class="section contact" id="contacto">
       <div class="container container--narrow reveal">
         <span class="eyebrow">Contacto</span>
-        <h2 class="contact__title">¿Empezamos a <em>escribir</em> algo juntas?</h2>
+        <h2 class="contact__title">¿Te acompaño en el camino?</h2>
         <p class="contact__text">
           Cuéntame en qué idioma sueñas, qué texto quieres pulir o a dónde
-          quieres llegar. Estaré encantada de acompañarte.
+          quieres llegar.
         </p>
         <div class="contact__actions">
           <a class="btn btn--primary" href="mailto:palciceva9@gmail.com">

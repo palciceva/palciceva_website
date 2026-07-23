@@ -16,6 +16,7 @@
 
 .hero__content .eyebrow {
   display: block;
+  line-height: 1.1;
   margin-bottom: var(--space-md);
 }
 
@@ -24,23 +25,24 @@
 }
 
 .hero__title .accent {
-  font-style: italic;
   color: var(--color-accent);
 }
 
 .hero__roles {
   font-family: var(--font-sans);
   font-size: 0.82rem;
+  line-height: 1.1;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-text-muted);
+  /* Same glassy taupe as the "Hispanista · Italianista" eyebrow. */
+  color: var(--color-accent-glass);
   margin-bottom: var(--space-lg);
 }
 
 .hero__roles span:not(:last-child)::after {
   content: "·";
   margin-inline: 0.6em;
-  color: var(--color-accent);
+  color: inherit;
 }
 
 .hero__intro {
@@ -48,6 +50,13 @@
   line-height: 1.62;
   color: var(--color-text);
   margin-bottom: var(--space-lg);
+}
+
+/* Book-like justified text; paragraphs sit directly together (no gap). */
+.hero__intro p {
+  max-width: none;
+  text-align: justify;
+  hyphens: auto;
 }
 
 .hero__actions {
@@ -71,12 +80,12 @@
   box-shadow: 0 30px 60px -30px var(--color-shadow);
 }
 
-/* Framed accent line behind the portrait for an editorial feel. */
+/* Sage colour block behind the portrait (the green from "Hispanista"). */
 .hero__portrait::before {
   content: "";
   position: absolute;
-  inset: -14px -14px 14px 14px;
-  border: 1px solid var(--color-line);
+  inset: -20px -20px 20px 20px;
+  background-color: var(--color-accent);
   border-radius: var(--radius-lg);
   z-index: -1;
 }

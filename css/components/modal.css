@@ -6,6 +6,9 @@
 .modal {
   width: min(720px, calc(100vw - 2rem));
   max-height: min(86vh, 900px);
+  /* Re-instate centering: the global reset's `* { margin: 0 }` had
+     overridden the native <dialog>'s default `margin: auto`. */
+  margin: auto;
   padding: 0;
   border: 1px solid var(--color-line);
   border-radius: var(--radius-lg);
@@ -83,14 +86,22 @@
   padding: var(--space-lg) var(--space-xl) var(--space-xl);
 }
 
+/* The personal "quote" sits in a green box — same sage tone as the
+   service cards, with a light cream border. */
 .modal__intro {
   font-size: var(--fs-lead);
   font-style: italic;
   color: var(--color-text);
   line-height: 1.6;
   margin-bottom: var(--space-xl);
-  padding-left: var(--space-md);
-  border-left: 2px solid var(--color-accent);
+  padding: var(--space-lg);
+  background-color: color-mix(in srgb, var(--color-accent) 44%, var(--color-surface));
+  border: 1px solid color-mix(in srgb, #ffffff 45%, var(--color-surface));
+  border-radius: var(--radius-md);
+}
+
+.modal__intro p + p {
+  margin-top: var(--space-sm);
 }
 
 /* Detail sub-sections inside the modal */
@@ -153,6 +164,10 @@
   color: var(--color-text-muted);
   font-size: 1rem;
   line-height: 1.6;
+}
+
+.experience-item__desc + .experience-item__desc {
+  margin-top: var(--space-sm);
 }
 
 /* Skill chips */

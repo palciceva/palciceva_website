@@ -9,6 +9,8 @@
  */
 
 import { initServices } from "./modules/services.js";
+import { initEducation } from "./modules/education.js";
+import { initGallery } from "./modules/gallery.js";
 import { initProjects } from "./modules/projects.js";
 import { createModal } from "./modules/modal.js";
 import { initNavigation } from "./modules/navigation.js";
@@ -19,6 +21,11 @@ function boot() {
   const modal = createModal();
 
   initServices(document.getElementById("services-grid"), modal);
+  initEducation(
+    document.getElementById("education-list"),
+    document.getElementById("courses-list")
+  );
+  initGallery();
   initProjects(document.getElementById("projects-grid"));
   initNavigation();
   initFooter();
