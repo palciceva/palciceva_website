@@ -99,7 +99,7 @@
       <div class="container">
         <div class="section-head reveal">
           <span class="eyebrow">Qué ofrezco</span>
-          <h2>Tres formas de trabajar con la lengua</h2>
+          <h2>Tres formas de trabajar conmigo</h2>
         </div>
         <!-- Cards rendered from js/data/content.js -->
         <div class="services__grid" id="services-grid" data-reveal-stagger></div>
@@ -126,25 +126,24 @@
           <h2>Educación</h2>
         </div>
         <div class="education__grid">
-          <!-- Degrees timeline (+ graduation photo) -->
-          <div class="education__main">
-            <div id="education-list"></div>
-            <figure class="education__photo reveal">
-              <img
-                src="assets/images/graduation-large.jpg"
-                srcset="assets/images/graduation-small.jpg 480w,
-                        assets/images/graduation-large.jpg 880w"
-                sizes="(max-width: 860px) 100vw, 360px"
-                width="880" height="1173"
-                alt="Eva el día de su graduación, frente a la Filozofska fakulteta de la Universidad de Liubliana, con su tesis y un ramo de flores."
-                loading="lazy" />
-            </figure>
-          </div>
-          <!-- Complementary courses -->
-          <aside class="education__courses reveal">
-            <p class="education__courses-label">Formación complementaria</p>
-            <div id="courses-list"></div>
-          </aside>
+          <!-- Left: graduation photo -->
+          <figure class="education__photo reveal">
+            <img
+              src="assets/images/graduation-large.jpg"
+              srcset="assets/images/graduation-small.jpg 480w,
+                      assets/images/graduation-large.jpg 880w"
+              sizes="(max-width: 860px) 100vw, 440px"
+              width="880" height="1173"
+              alt="Eva el día de su graduación, frente a la Filozofska fakulteta de la Universidad de Liubliana, con su tesis y un ramo de flores."
+              loading="lazy" />
+          </figure>
+          <!-- Right: degrees timeline -->
+          <div class="education__main" id="education-list"></div>
+        </div>
+        <!-- Complementary courses — full-width, horizontal -->
+        <div class="education__courses reveal">
+          <p class="education__courses-label">Formación complementaria</p>
+          <div class="education__courses-grid" id="courses-list"></div>
         </div>
       </div>
     </section>

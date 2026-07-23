@@ -14,10 +14,14 @@ function renderCard(project) {
        </a>`
     : "";
 
+  const icon = project.icon && icons[project.icon]
+    ? `<span class="project-card__icon">${icons[project.icon]}</span>`
+    : "";
+
   return `
     <article class="project-card reveal">
       <p class="project-card__kicker">${escapeHtml(project.kicker)}</p>
-      <h3 class="project-card__title">${escapeHtml(project.title)}</h3>
+      <h3 class="project-card__title">${escapeHtml(project.title)}${icon}</h3>
       <p class="project-card__desc">${escapeHtml(project.desc)}</p>
       <div class="project-card__footer">
         <span class="project-card__tag">${escapeHtml(project.tag)}</span>

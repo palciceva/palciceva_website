@@ -118,6 +118,7 @@ export const projects = [
   {
     kicker: "Instagram · literatura & lingüística",
     title: "Café con letras",
+    icon: "mug",
     desc:
       "Café con Letras es un rincón donde se encuentran los idiomas, la literatura, el arte y el café. Allí comparto curiosidades lingüísticas, reglas gramaticales, reflexiones, reseñas y recomendaciones.",
     tag: "En marcha",
@@ -127,6 +128,7 @@ export const projects = [
   {
     kicker: "Proyecto en preparación",
     title: "Biblioteca virtual",
+    icon: "book",
     desc:
       "Una biblioteca personal en línea donde registrar lecturas, escribir reseñas, seguir el propio recorrido lector y descubrir qué idiomas, autores y mundos están en tus estanterías.",
     tag: "Próximamente",
@@ -197,16 +199,15 @@ export const courses = [
 
 /**
  * Culture gallery — a horizontal carousel of photos shown between the
- * Education and Contact sections. Replace these placeholder tiles with
- * real photos in assets/images/gallery/ (keep them ~4:5 portrait).
+ * Education and Contact sections. Files live in assets/images/gallery/
+ * as gallery-01.jpg … gallery-NN.jpg (mixed orientations, fixed height).
+ * Change GALLERY_COUNT if you add/remove photos.
  */
-export const gallery = [
-  { src: "assets/images/gallery/gallery-1.jpg", alt: "Foto (marcador de posición)" },
-  { src: "assets/images/gallery/gallery-2.jpg", alt: "Foto (marcador de posición)" },
-  { src: "assets/images/gallery/gallery-3.jpg", alt: "Foto (marcador de posición)" },
-  { src: "assets/images/gallery/gallery-4.jpg", alt: "Foto (marcador de posición)" },
-  { src: "assets/images/gallery/gallery-5.jpg", alt: "Foto (marcador de posición)" },
-];
+const GALLERY_COUNT = 53;
+export const gallery = Array.from({ length: GALLERY_COUNT }, (_, i) => ({
+  src: `assets/images/gallery/gallery-${String(i + 1).padStart(2, "0")}.jpg`,
+  alt: "Fotografía de Eva Palčič",
+}));
 
 /** Contact + social handles, reused by the footer and contact section. */
 export const contact = {

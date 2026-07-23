@@ -9,12 +9,9 @@ import { escapeHtml } from "./utils.js";
 function renderEduItem(item) {
   return `
     <article class="edu-item reveal">
-      <p class="edu-item__date">${escapeHtml(item.date)}</p>
-      <div class="edu-item__body">
-        <h3 class="edu-item__degree">${escapeHtml(item.degree)}</h3>
-        <p class="edu-item__org">${escapeHtml(item.org)}</p>
-        <p class="edu-item__loc">${escapeHtml(item.location)}</p>
-      </div>
+      <h3 class="edu-item__degree">${escapeHtml(item.degree)}</h3>
+      <p class="edu-item__org">${escapeHtml(item.org)}</p>
+      <p class="edu-item__loc">${escapeHtml(item.location)} (${escapeHtml(item.date)})</p>
     </article>`;
 }
 

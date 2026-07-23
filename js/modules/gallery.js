@@ -12,7 +12,7 @@ function renderItem(photo) {
   return `
     <figure class="gallery__item">
       <img src="${escapeHtml(photo.src)}" alt="${escapeHtml(photo.alt)}"
-           width="640" height="800" loading="lazy" />
+           loading="lazy" />
     </figure>`;
 }
 
