@@ -32,32 +32,53 @@
 
 .gallery__track {
   display: flex;
+  align-items: flex-start;
   column-gap: var(--space-md);
   /* Align first/last tile with the page gutter. */
   padding-inline: max(var(--space-lg), calc((100vw - var(--content-max)) / 2));
 }
 
-/* Fixed height, natural width — mixed orientations sit together
-   without being cropped. */
 .gallery__item {
   flex: 0 0 auto;
-  height: clamp(320px, 46vh, 500px);
-  max-width: 82vw;
   scroll-snap-align: center;
+}
+
+/* Fixed height, natural width — mixed orientations sit together
+   without being cropped. */
+.gallery__frame {
+  display: block;
+  height: clamp(320px, 46vh, 500px);
+  width: fit-content;
+  max-width: 82vw;
   overflow: hidden;
   border-radius: var(--radius-md);
   background-color: var(--color-surface-alt);
 }
 
-.gallery__item img {
+.gallery__frame img {
   height: 100%;
   width: auto;
   object-fit: cover;
   transition: transform var(--dur-slow) var(--ease);
 }
 
-.gallery__item:hover img {
+.gallery__item:hover .gallery__frame img {
   transform: scale(1.04);
+}
+
+/* Caption under a tile — centred, italic, light green;
+   darkens on hover so it comes forward with the photo. */
+.gallery__caption {
+  margin-top: var(--space-sm);
+  text-align: center;
+  font-style: italic;
+  font-size: 0.98rem;
+  color: var(--color-accent-glass);
+  transition: color var(--dur) var(--ease);
+}
+
+.gallery__item:hover .gallery__caption {
+  color: var(--color-accent-deep);
 }
 
 /* Prev / next controls */

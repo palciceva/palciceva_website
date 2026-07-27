@@ -37,6 +37,15 @@
 
 .brand:hover { color: var(--color-text); }
 
+/* "× Café con letras" — lighter weight so the name leads the lockup. */
+.brand__collab {
+  font-weight: 400;
+}
+
+@media (max-width: 720px) {
+  .brand__collab { display: none; }
+}
+
 .nav {
   display: flex;
   align-items: center;

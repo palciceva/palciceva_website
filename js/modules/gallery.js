@@ -9,10 +9,16 @@ import { gallery } from "../data/content.js";
 import { escapeHtml } from "./utils.js";
 
 function renderItem(photo) {
+  const caption = photo.caption
+    ? `<figcaption class="gallery__caption">${escapeHtml(photo.caption)}</figcaption>`
+    : "";
   return `
     <figure class="gallery__item">
-      <img src="${escapeHtml(photo.src)}" alt="${escapeHtml(photo.alt)}"
-           loading="lazy" />
+      <span class="gallery__frame">
+        <img src="${escapeHtml(photo.src)}" alt="${escapeHtml(photo.alt)}"
+             loading="lazy" />
+      </span>
+      ${caption}
     </figure>`;
 }
 
@@ -36,4 +42,53 @@ export function initGallery() {
 
   if (prev) prev.addEventListener("click", () => stepBy(-1));
   if (next) next.addEventListener("click", () => stepBy(1));
+
+  initEdgeAutoScroll(viewport);
+}
+
+/**
+ * Edge auto-scroll — while the mouse rests over the partly-hidden tile on
+ * either side, the carousel glides that way on its own. Snap and smooth
+ * scrolling are paused during the glide so the motion stays continuous;
+ * they're restored (settling to the nearest tile) when the mouse leaves.
+ * Mouse-only enhancement; skipped for reduced-motion users.
+ */
+function initEdgeAutoScroll(viewport) {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  const EDGE = 0.15; // hot-zone width, as a fraction of the viewport
+  const SPEED = 8; // pixels per frame
+  let dir = 0;
+  let rafId = null;
+
+  const tick = () => {
+    if (dir === 0) {
+      rafId = null;
+      return;
+    }
+    viewport.scrollLeft += dir * SPEED;
+    rafId = requestAnimationFrame(tick);
+  };
+
+  const setDir = (next) => {
+    if (next === dir) return;
+    dir = next;
+    if (dir !== 0) {
+      viewport.style.scrollSnapType = "none";
+      viewport.style.scrollBehavior = "auto";
+      if (rafId === null) rafId = requestAnimationFrame(tick);
+    } else {
+      viewport.style.scrollSnapType = "";
+      viewport.style.scrollBehavior = "";
+    }
+  };
+
+  viewport.addEventListener("mousemove", (event) => {
+    const rect = viewport.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    if (x > rect.width * (1 - EDGE)) setDir(1);
+    else if (x < rect.width * EDGE) setDir(-1);
+    else setDir(0);
+  });
+  viewport.addEventListener("mouseleave", () => setDir(0));
 }

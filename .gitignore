@@ -7,3 +7,6 @@
 
 # Logs / temp
 *.log
+
+# VS Code workspace (machine-specific)
+*.code-workspace

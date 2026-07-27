@@ -203,10 +203,57 @@ export const courses = [
  * as gallery-01.jpg … gallery-NN.jpg (mixed orientations, fixed height).
  * Change GALLERY_COUNT if you add/remove photos.
  */
-const GALLERY_COUNT = 53;
-export const gallery = Array.from({ length: GALLERY_COUNT }, (_, i) => ({
+// One caption per photo, in carousel order (gallery-01 … gallery-43).
+const galleryCaptions = [
+  "Sevilla, España",                 // 01
+  "Islas Galápagos, Ecuador",        // 02
+  "Baños, Ecuador",                  // 03
+  "Palma de Mallorca, Mallorca",     // 04
+  "Quito, Ecuador",                  // 05
+  "Ibarra, Ecuador",                 // 06
+  "Cádiz, España",                   // 07
+  "Sevilla, España",                 // 08
+  "Islas Galápagos, Ecuador",        // 09
+  "La Habana, Cuba",                 //10
+  "Quito, Ecuador",                  // 11
+  "Cotacachi, Ecuador",              // 12
+  "Islas Galápagos",                 // 13
+  "Quito, Ecuador",                  // 14
+  "Sevilla, España",                 // 15
+  "Sevilla, España",                 // 16
+  "Andratx, Mallorca",               // 17
+  "Mitad del Mundo, Ecuador",        // 18
+  "Triana, España",                  // 19
+  "Sevilla, España",                 // 20
+  "Quito, Ecuador",                  // 21
+  "Tarifa, España",                  // 22
+  "Guanabo, Cuba",                   // 23
+  "Islas Galápagos, Ecuador",        // 24
+  "Sevilla, España",                 // 25
+  "Granada, España",                 // 26
+  "La Habana, Cuba",                 //27
+  "Cotopaxi, Ecuador",               // 28
+  "Quito, Ecuador",                  // 29
+  "Pollença, Mallorca",              // 30
+  "Andratx, Mallorca",               // 31
+  "Quito, Ecuador",                  // 32
+  "Córdoba, España",                 // 33
+  "Otavalo, Ecuador",                // 34
+  "Sevilla, España",                 // 35
+  "Ronda, España",                   // 36
+  "Sevilla, España",                 // 37
+  "Sevilla, España",                 // 38
+  "Quito, Ecuador",                  // 39
+  "Sevilla, España",                 // 40
+  "Islas Galápagos, Ecuador",        // 41
+  "Setenil de las Bodegas, España",  // 42
+  "Setenil de las Bodegas, España",  // 43
+];
+
+export const gallery = galleryCaptions.map((caption, i) => ({
   src: `assets/images/gallery/gallery-${String(i + 1).padStart(2, "0")}.jpg`,
-  alt: "Fotografía de Eva Palčič",
+  alt: `${caption} — fotografía de Eva Palčič`,
+  caption,
 }));
 
 /** Contact + social handles, reused by the footer and contact section. */
