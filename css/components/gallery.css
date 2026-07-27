@@ -43,21 +43,19 @@
   scroll-snap-align: center;
 }
 
-/* Fixed height, natural width — mixed orientations sit together
-   without being cropped. */
+/* Uniform tiles — every photo the same size (cropped to fill). */
 .gallery__frame {
   display: block;
-  height: clamp(320px, 46vh, 500px);
-  width: fit-content;
-  max-width: 82vw;
+  width: clamp(250px, 24vw, 330px);
+  aspect-ratio: 4 / 5;
   overflow: hidden;
   border-radius: var(--radius-md);
   background-color: var(--color-surface-alt);
 }
 
 .gallery__frame img {
+  width: 100%;
   height: 100%;
-  width: auto;
   object-fit: cover;
   transition: transform var(--dur-slow) var(--ease);
 }

@@ -250,8 +250,11 @@ const galleryCaptions = [
   "Setenil de las Bodegas, España",  // 43
 ];
 
+// Filenames are reused when photos are reordered/replaced, so browsers can
+// serve stale copies. Bump this version to force a fresh fetch of every photo.
+const GALLERY_VERSION = 2;
 export const gallery = galleryCaptions.map((caption, i) => ({
-  src: `assets/images/gallery/gallery-${String(i + 1).padStart(2, "0")}.jpg`,
+  src: `assets/images/gallery/gallery-${String(i + 1).padStart(2, "0")}.jpg?v=${GALLERY_VERSION}`,
   alt: `${caption} — fotografía de Eva Palčič`,
   caption,
 }));
