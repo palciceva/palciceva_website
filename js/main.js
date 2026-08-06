@@ -7,7 +7,7 @@
  */
 
 import { content } from "./data/content.js";
-import { getLang, applyLanguage, otherLang } from "./modules/i18n.js";
+import { getLang, applyLanguage } from "./modules/i18n.js";
 import { createModal } from "./modules/modal.js";
 import { initGallery } from "./modules/gallery.js";
 import { initNavigation } from "./modules/navigation.js";
@@ -31,13 +31,12 @@ function boot() {
   // the scroll-in animation.
   initReveal();
 
-  const toggle = document.querySelector("[data-lang-toggle]");
-  if (toggle) {
-    toggle.addEventListener("click", () => {
-      lang = otherLang(lang);
+  document.querySelectorAll("[data-lang]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      lang = btn.dataset.lang;
       applyLanguage(lang, modal, { immediate: true });
     });
-  }
+  });
 }
 
 if (document.readyState === "loading") {

@@ -8,6 +8,7 @@
 
 import es from "./content.es.js";
 import en from "./content.en.js";
+import it from "./content.it.js";
 
 // Bump when photos are reordered/replaced so browsers fetch fresh files.
 const GALLERY_VERSION = 2;
@@ -24,9 +25,10 @@ function buildGallery(captions) {
 export const content = {
   es: { ...es, gallery: buildGallery(es.galleryCaptions) },
   en: { ...en, gallery: buildGallery(en.galleryCaptions) },
+  it: { ...it, gallery: buildGallery(it.galleryCaptions) },
 };
 
-export const LANGS = ["es", "en"];
+export const LANGS = ["es", "en", "it"];
 export const DEFAULT_LANG = "es";
 
 /** Contact + social handles (language-independent). */

@@ -19,10 +19,6 @@ export function getLang() {
   return LANGS.includes(saved) ? saved : DEFAULT_LANG;
 }
 
-export function otherLang(lang) {
-  return lang === "es" ? "en" : "es";
-}
-
 /** Resolve a dotted path ("a.b.c") against an object. */
 function resolve(obj, path) {
   return path.split(".").reduce((o, k) => (o == null ? undefined : o[k]), obj);
@@ -69,8 +65,13 @@ export function applyLanguage(lang, modal, { immediate = false } = {}) {
   );
   updateGalleryText(data.gallery);
 
-  const toggle = document.querySelector("[data-lang-toggle]");
-  if (toggle) toggle.textContent = ui.toggle;
+  // Mark the active language in the switch.
+  document.querySelectorAll("[data-lang]").forEach((btn) => {
+    const active = btn.dataset.lang === lang;
+    btn.classList.toggle("is-active", active);
+    if (active) btn.setAttribute("aria-current", "true");
+    else btn.removeAttribute("aria-current");
+  });
 
   if (immediate) {
     document

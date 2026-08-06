@@ -76,7 +76,7 @@ export default {
         {
           role: "Profesora de español online",
           org: "MANU Language Factory",
-          date: "Enero 2026 – actualidad",
+          date: "Ene 2026 – actualidad",
           desc:
             "Clases de español en línea para estudiantes eslovenos y extranjeros, con explicaciones en español, esloveno e inglés. Trabajo con alumnado de distintas edades y perfiles, adaptando el ritmo, los materiales y los recursos didácticos a las necesidades de cada persona.",
         },
@@ -245,7 +245,7 @@ export default {
     "La Habana, Cuba",
     "Quito, Ecuador",
     "Cotacachi, Ecuador",
-    "Islas Galápagos",
+    "Islas Galápagos, Ecuador",
     "Quito, Ecuador",
     "Sevilla, España",
     "Sevilla, España",

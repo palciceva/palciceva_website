@@ -106,11 +106,13 @@ palciceva_website/
                             #   navigation, footer, reveal
 ```
 
-**Bilingual (ES / EN).** Spanish is default; a header pill toggle switches
-languages (saved to `localStorage`, key `lang`).
-- Copy lives in `js/data/content.es.js` and `js/data/content.en.js` (mirror
-  each other). `content.js` merges them into `content[lang]` + holds
-  language-independent data (photo `src`s, contact links).
+**Trilingual (ES / EN / IT).** Spanish is default; a header switch (ES · EN ·
+IT, active one underlined) changes language (saved to `localStorage`, key
+`lang`). EN & IT are translated from the Spanish original.
+- Copy lives in `js/data/content.es.js`, `content.en.js`, `content.it.js`
+  (mirror each other). `content.js` merges them into `content[lang]` + holds
+  language-independent data (photo `src`s, contact links). `LANGS` lists the
+  language codes. To add a language, add a `content.<xx>.js` + register it.
 - **Static** HTML text uses `data-i18n` / `data-i18n-html` / `data-i18n-aria`
   attributes = dotted paths into that language's `ui` dictionary.
 - **Dynamic** sections re-render via `js/modules/i18n.js` `applyLanguage()`.

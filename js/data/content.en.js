@@ -76,7 +76,7 @@ export default {
         {
           role: "Online Spanish teacher",
           org: "MANU Language Factory",
-          date: "January 2026 – present",
+          date: "Jan 2026 – present",
           desc:
             "Online Spanish classes for Slovenian and international students, with explanations in Spanish, Slovenian and English. I work with students of different ages and backgrounds, adapting the pace, materials and teaching resources to each person's needs.",
         },
@@ -245,7 +245,7 @@ export default {
     "Havana, Cuba",
     "Quito, Ecuador",
     "Cotacachi, Ecuador",
-    "Galápagos Islands",
+    "Galápagos Islands, Ecuador",
     "Quito, Ecuador",
     "Seville, Spain",
     "Seville, Spain",

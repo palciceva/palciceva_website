@@ -64,23 +64,32 @@
 
 .nav a:hover { color: var(--color-text); }
 
-/* Language switch — a small pill next to the nav. */
-.lang-toggle {
+/* Language switch — ES / EN / IT, the active one underlined in sage. */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
   font-family: var(--font-sans);
   font-size: 0.72rem;
   font-weight: 500;
-  letter-spacing: 0.16em;
-  color: var(--color-text-muted);
-  padding: 0.4em 0.75em;
-  border: 1px solid var(--color-line);
-  border-radius: 100px;
-  transition: color var(--dur-fast) var(--ease),
-              border-color var(--dur-fast) var(--ease);
+  letter-spacing: 0.12em;
 }
 
-.lang-toggle:hover {
+.lang-switch button {
+  color: var(--color-text-muted);
+  transition: color var(--dur-fast) var(--ease);
+}
+
+.lang-switch button:hover {
   color: var(--color-text);
-  border-color: var(--color-accent);
+}
+
+.lang-switch button.is-active {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent);
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1.5px;
 }
 
 /* Mobile: collapse the nav; the name stays as anchor. */
