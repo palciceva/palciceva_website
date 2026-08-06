@@ -1,9 +1,8 @@
 /**
  * education.js — renders the academic timeline and the list of
- * complementary courses from data/content.js.
+ * complementary courses from the active language's data.
  */
 
-import { education, courses } from "../data/content.js";
 import { escapeHtml } from "./utils.js";
 
 function renderEduItem(item) {
@@ -27,8 +26,9 @@ function renderCourse(item) {
 /**
  * @param {HTMLElement} listEl    - timeline container for degrees
  * @param {HTMLElement} coursesEl - container for the courses list
+ * @param {object} data - the active language's content (`content[lang]`)
  */
-export function initEducation(listEl, coursesEl) {
-  if (listEl) listEl.innerHTML = education.map(renderEduItem).join("");
-  if (coursesEl) coursesEl.innerHTML = courses.map(renderCourse).join("");
+export function initEducation(listEl, coursesEl, data) {
+  if (listEl) listEl.innerHTML = data.education.map(renderEduItem).join("");
+  if (coursesEl) coursesEl.innerHTML = data.courses.map(renderCourse).join("");
 }

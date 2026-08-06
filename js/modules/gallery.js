@@ -1,11 +1,13 @@
 /**
- * gallery.js — renders the culture photo carousel and wires the
- * prev/next buttons to a smooth horizontal scroll. Uses native
- * scroll-snap (see css/components/gallery.css); the buttons just
- * nudge the scroll position.
+ * gallery.js — the culture photo carousel.
+ *
+ * The strip drifts slowly and continuously on its own. Resting the mouse
+ * near the right edge speeds it up; near the left edge it runs backwards.
+ * The photo set is rendered twice so the motion loops seamlessly.
+ * Autoplay is skipped for reduced-motion users (they can still scroll it
+ * by hand — the viewport stays horizontally scrollable).
  */
 
-import { gallery } from "../data/content.js";
 import { escapeHtml } from "./utils.js";
 
 function renderItem(photo) {
@@ -22,73 +24,80 @@ function renderItem(photo) {
     </figure>`;
 }
 
-export function initGallery() {
+/**
+ * Update only the caption/alt text of the existing tiles — used on a
+ * language switch, so the auto-scroll loop keeps running untouched.
+ * @param {Array<{caption:string, alt:string}>} photos
+ */
+export function updateGalleryText(photos) {
   const track = document.getElementById("gallery-track");
-  if (!track) return;
-
-  track.innerHTML = gallery.map(renderItem).join("");
-
-  const viewport = track.parentElement;
-  const prev = document.querySelector("[data-gallery-prev]");
-  const next = document.querySelector("[data-gallery-next]");
-
-  // Scroll by roughly one-and-a-bit tiles per click.
-  const stepBy = (dir) => {
-    const item = track.querySelector(".gallery__item");
-    const gap = parseFloat(getComputedStyle(track).columnGap) || 20;
-    const amount = item ? item.getBoundingClientRect().width + gap : 320;
-    viewport.scrollBy({ left: dir * amount * 1.2, behavior: "smooth" });
-  };
-
-  if (prev) prev.addEventListener("click", () => stepBy(-1));
-  if (next) next.addEventListener("click", () => stepBy(1));
-
-  initEdgeAutoScroll(viewport);
+  if (!track || !photos.length) return;
+  const n = photos.length;
+  track.querySelectorAll(".gallery__item").forEach((fig, i) => {
+    const photo = photos[i % n];
+    const cap = fig.querySelector(".gallery__caption");
+    const img = fig.querySelector("img");
+    if (cap && photo.caption) cap.textContent = photo.caption;
+    if (img) img.alt = photo.alt;
+  });
 }
 
 /**
- * Edge auto-scroll — while the mouse rests over the partly-hidden tile on
- * either side, the carousel glides that way on its own. Snap and smooth
- * scrolling are paused during the glide so the motion stays continuous;
- * they're restored (settling to the nearest tile) when the mouse leaves.
- * Mouse-only enhancement; skipped for reduced-motion users.
+ * @param {Array<{src, alt, caption}>} photos - active language's gallery
  */
-function initEdgeAutoScroll(viewport) {
+export function initGallery(photos) {
+  const track = document.getElementById("gallery-track");
+  if (!track) return;
+
+  // Render the set twice so the drift can wrap without a visible seam.
+  track.innerHTML = photos.concat(photos).map(renderItem).join("");
+
+  const viewport = track.parentElement;
+
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-  const EDGE = 0.15; // hot-zone width, as a fraction of the viewport
-  const SPEED = 8; // pixels per frame
-  let dir = 0;
-  let rafId = null;
+  const BASE = 0.5;    // constant slow drift (px/frame)
+  const FAST = 7;      // mouse near the right edge
+  const REVERSE = -5;  // mouse near the left edge
+  const EDGE = 0.15;   // hot-zone width, as a fraction of the viewport
 
-  const tick = () => {
-    if (dir === 0) {
-      rafId = null;
-      return;
-    }
-    viewport.scrollLeft += dir * SPEED;
-    rafId = requestAnimationFrame(tick);
+  let target = BASE;   // speed we're easing toward
+  let speed = BASE;    // current speed
+  let pos = 0;         // our own float scroll position (avoids sub-pixel stalls)
+  let setWidth = 0;    // width of one photo set (wrap distance)
+
+  const measure = () => {
+    const n = photos.length;
+    setWidth =
+      track.children.length > n
+        ? track.children[n].offsetLeft - track.children[0].offsetLeft
+        : 0;
   };
+  measure();
+  window.addEventListener("resize", measure);
 
-  const setDir = (next) => {
-    if (next === dir) return;
-    dir = next;
-    if (dir !== 0) {
-      viewport.style.scrollSnapType = "none";
-      viewport.style.scrollBehavior = "auto";
-      if (rafId === null) rafId = requestAnimationFrame(tick);
-    } else {
-      viewport.style.scrollSnapType = "";
-      viewport.style.scrollBehavior = "";
+  const loop = () => {
+    if (!setWidth) measure();
+    speed += (target - speed) * 0.08; // ease toward the target speed
+    pos += speed;
+    if (setWidth > 0) {
+      if (pos >= setWidth) pos -= setWidth;
+      else if (pos < 0) pos += setWidth;
     }
+    viewport.scrollLeft = pos;
+    requestAnimationFrame(loop);
   };
 
   viewport.addEventListener("mousemove", (event) => {
     const rect = viewport.getBoundingClientRect();
     const x = event.clientX - rect.left;
-    if (x > rect.width * (1 - EDGE)) setDir(1);
-    else if (x < rect.width * EDGE) setDir(-1);
-    else setDir(0);
+    if (x > rect.width * (1 - EDGE)) target = FAST;
+    else if (x < rect.width * EDGE) target = REVERSE;
+    else target = BASE;
   });
-  viewport.addEventListener("mouseleave", () => setDir(0));
+  viewport.addEventListener("mouseleave", () => {
+    target = BASE;
+  });
+
+  requestAnimationFrame(loop);
 }

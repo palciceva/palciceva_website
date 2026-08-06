@@ -12,9 +12,10 @@ import { escapeHtml, escapeWithEmphasis } from "./utils.js";
 
 /**
  * Build the inner HTML for a service's detail view.
- * @param {object} service - one entry from data/content.js `services`
+ * @param {object} service - one service entry (in the active language)
+ * @param {object} labels  - { experience, skills, close } localized strings
  */
-function renderModalContent(service) {
+function renderModalContent(service, labels) {
   const experienceHtml = service.experience
     .map((item) => {
       // `desc` may be a single string or several paragraphs.
@@ -47,9 +48,9 @@ function renderModalContent(service) {
   return `
     <div class="modal__scroll">
       <header class="modal__header">
-        <p class="modal__index">${escapeHtml(service.index)}</p>
         <h3 class="modal__title" id="modal-title">${escapeHtml(title)}</h3>
-        <button class="modal__close" type="button" data-close aria-label="Cerrar">
+        <button class="modal__close" type="button" data-close
+                aria-label="${escapeHtml(labels.close)}">
           ${icons.close}
         </button>
       </header>
@@ -57,12 +58,12 @@ function renderModalContent(service) {
         <div class="modal__intro">${introHtml}</div>
 
         <section class="modal-section">
-          <p class="modal-section__label">Experiencia</p>
+          <p class="modal-section__label">${escapeHtml(labels.experience)}</p>
           ${experienceHtml}
         </section>
 
         <section class="modal-section">
-          <p class="modal-section__label">Habilidades</p>
+          <p class="modal-section__label">${escapeHtml(labels.skills)}</p>
           <ul class="skill-list">${skillsHtml}</ul>
         </section>
       </div>
@@ -73,9 +74,9 @@ export function createModal() {
   const dialog = document.getElementById("service-modal");
   let lastFocused = null;
 
-  function open(service) {
+  function open(service, labels) {
     lastFocused = document.activeElement;
-    dialog.innerHTML = renderModalContent(service);
+    dialog.innerHTML = renderModalContent(service, labels);
     dialog.setAttribute("aria-labelledby", "modal-title");
     dialog.showModal();
     document.body.style.overflow = "hidden";

@@ -1,8 +1,8 @@
 /**
- * projects.js — renders the personal-projects cards from data.
+ * projects.js — renders the personal-projects cards from the active
+ * language's data.
  */
 
-import { projects } from "../data/content.js";
 import { icons } from "./icons.js";
 import { escapeHtml } from "./utils.js";
 
@@ -14,9 +14,10 @@ function renderCard(project) {
        </a>`
     : "";
 
-  const icon = project.icon && icons[project.icon]
-    ? `<span class="project-card__icon">${icons[project.icon]}</span>`
-    : "";
+  const icon =
+    project.icon && icons[project.icon]
+      ? `<span class="project-card__icon">${icons[project.icon]}</span>`
+      : "";
 
   return `
     <article class="project-card reveal">
@@ -30,7 +31,7 @@ function renderCard(project) {
     </article>`;
 }
 
-export function initProjects(container) {
+export function initProjects(container, data) {
   if (!container) return;
-  container.innerHTML = projects.map(renderCard).join("");
+  container.innerHTML = data.projects.map(renderCard).join("");
 }

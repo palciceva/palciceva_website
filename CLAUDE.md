@@ -106,10 +106,22 @@ palciceva_website/
                             #   navigation, footer, reveal
 ```
 
-**Data-driven:** the three services and the projects are rendered from
-`js/data/content.js`. To edit text, add an experience entry, or add a service,
-**change that file only** — the UI rebuilds itself. Each service object:
-`{ id, index, title, icon, tagline, intro, experience[], skills[] }`.
+**Bilingual (ES / EN).** Spanish is default; a header pill toggle switches
+languages (saved to `localStorage`, key `lang`).
+- Copy lives in `js/data/content.es.js` and `js/data/content.en.js` (mirror
+  each other). `content.js` merges them into `content[lang]` + holds
+  language-independent data (photo `src`s, contact links).
+- **Static** HTML text uses `data-i18n` / `data-i18n-html` / `data-i18n-aria`
+  attributes = dotted paths into that language's `ui` dictionary.
+- **Dynamic** sections re-render via `js/modules/i18n.js` `applyLanguage()`.
+- **"Café con letras" stays in Spanish in both languages** (original name);
+  institution names use English exonyms in EN.
+- To add a translatable string: add the key to BOTH content files, then use it
+  via `data-i18n` (static) or a render module (dynamic).
+
+**Data-driven:** services/projects/education/gallery render from the active
+language's data — edit copy in the two `content.*.js` files only. Each service:
+`{ id, title, modalTitle?, icon, tagline, intro[], experience[], skills[] }`.
 
 **Modal** is built on the native `<dialog>` element (`js/modules/modal.js`) so
 accessibility (focus trap, Esc-to-close, backdrop) is handled by the platform.

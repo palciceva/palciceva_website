@@ -20,11 +20,11 @@
   margin: 0 auto var(--space-2xl);
 }
 
-/* Horizontal scroller — full-bleed, snaps tile to tile. */
+/* Horizontal scroller — drives a continuous auto-scroll (see gallery.js).
+   No scroll-snap/smooth: they'd fight the constant motion. The leading
+   padding matches the column gap so the looping wrap is seamless. */
 .gallery__viewport {
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
@@ -34,13 +34,11 @@
   display: flex;
   align-items: flex-start;
   column-gap: var(--space-md);
-  /* Align first/last tile with the page gutter. */
-  padding-inline: max(var(--space-lg), calc((100vw - var(--content-max)) / 2));
+  padding-inline: var(--space-md);
 }
 
 .gallery__item {
   flex: 0 0 auto;
-  scroll-snap-align: center;
 }
 
 /* Uniform tiles — every photo the same size (cropped to fill). */
@@ -78,32 +76,3 @@
 .gallery__item:hover .gallery__caption {
   color: var(--color-accent-deep);
 }
-
-/* Prev / next controls */
-.gallery__controls {
-  display: flex;
-  justify-content: center;
-  gap: var(--space-sm);
-  margin-top: var(--space-xl);
-}
-
-.gallery__btn {
-  width: 48px;
-  height: 48px;
-  display: grid;
-  place-items: center;
-  border: 1px solid var(--color-line);
-  border-radius: 50%;
-  color: var(--color-text-muted);
-  transition: color var(--dur-fast) var(--ease),
-              border-color var(--dur-fast) var(--ease),
-              transform var(--dur-fast) var(--ease);
-}
-
-.gallery__btn:hover {
-  color: var(--color-accent-deep);
-  border-color: var(--color-accent);
-  transform: translateY(-2px);
-}
-
-.gallery__btn svg { width: 18px; height: 18px; }

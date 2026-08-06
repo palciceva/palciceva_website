@@ -31,17 +31,19 @@
 </head>
 
 <body>
-  <a class="visually-hidden" href="#main">Saltar al contenido</a>
+  <a class="visually-hidden" href="#main" data-i18n="skip">Saltar al contenido</a>
 
   <!-- ============ HEADER ============ -->
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="brand" href="#top">Eva Palčič<span class="brand__collab"> × Café con letras</span></a>
-      <nav class="nav" aria-label="Navegación principal">
-        <a href="#servicios">Servicios</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#educacion">Educación</a>
-        <a class="nav__cta" href="#contacto">Contacto</a>
+      <nav class="nav" aria-label="Navegación principal / Main navigation">
+        <a href="#servicios" data-i18n="nav.services">Servicios</a>
+        <a href="#proyectos" data-i18n="nav.projects">Proyectos</a>
+        <a href="#educacion" data-i18n="nav.education">Educación</a>
+        <a class="nav__cta" href="#contacto" data-i18n="nav.contact">Contacto</a>
+        <button class="lang-toggle" type="button" data-lang-toggle
+                aria-label="Change language · Cambiar idioma">EN</button>
       </nav>
     </div>
   </header>
@@ -51,15 +53,15 @@
     <section class="hero" id="top">
       <div class="container hero__grid">
         <div class="hero__content">
-          <span class="eyebrow reveal">Hispanista · Italianista</span>
-          <h1 class="hero__title reveal">
+          <span class="eyebrow reveal" data-i18n="hero.eyebrow">Hispanista · Italianista</span>
+          <h1 class="hero__title reveal" data-i18n-html="hero.titleHtml">
             Entre <span class="accent">lenguas</span>,<br />
             <span class="accent">letras</span> y <span class="accent">culturas</span>
           </h1>
-          <p class="hero__roles reveal">
+          <p class="hero__roles reveal" data-i18n-html="hero.rolesHtml">
             <span>Clases</span><span>Corrección</span><span>Traducción</span>
           </p>
-          <div class="hero__intro reveal">
+          <div class="hero__intro reveal" data-i18n-html="hero.introHtml">
             <p>
               Soy Eva, hispanista e italianista apasionada por los idiomas, la
               literatura y las culturas que les dan vida. Mi trabajo nace de una
@@ -73,8 +75,8 @@
             </p>
           </div>
           <div class="hero__actions reveal">
-            <a class="btn btn--primary" href="#servicios">Descubre mis servicios</a>
-            <a class="btn btn--ghost" href="#contacto">Hablemos</a>
+            <a class="btn btn--primary" href="#servicios" data-i18n="hero.cta1">Descubre mis servicios</a>
+            <a class="btn btn--ghost" href="#contacto" data-i18n="hero.cta2">Hablemos</a>
           </div>
         </div>
 
@@ -97,8 +99,8 @@
     <section class="section services" id="servicios">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow">Qué ofrezco</span>
-          <h2>Tres formas de trabajar conmigo</h2>
+          <span class="eyebrow" data-i18n="services.eyebrow">Qué ofrezco</span>
+          <h2 data-i18n="services.heading">Tres formas de trabajar conmigo</h2>
         </div>
         <!-- Cards rendered from js/data/content.js -->
         <div class="services__grid" id="services-grid" data-reveal-stagger></div>
@@ -109,8 +111,8 @@
     <section class="section projects" id="proyectos">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow">Más allá del trabajo</span>
-          <h2>Proyectos personales</h2>
+          <span class="eyebrow" data-i18n="projects.eyebrow">Más allá del trabajo</span>
+          <h2 data-i18n="projects.heading">Proyectos personales</h2>
         </div>
         <!-- Cards rendered from js/data/content.js -->
         <div class="projects__grid" id="projects-grid"></div>
@@ -121,8 +123,8 @@
     <section class="section education" id="educacion">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow">Formación</span>
-          <h2>Educación</h2>
+          <span class="eyebrow" data-i18n="education.eyebrow">Formación</span>
+          <h2 data-i18n="education.heading">Educación</h2>
         </div>
         <div class="education__grid">
           <!-- Left: graduation photo -->
@@ -141,7 +143,7 @@
         </div>
         <!-- Complementary courses — full-width, horizontal -->
         <div class="education__courses reveal">
-          <p class="education__courses-label">Formación complementaria</p>
+          <p class="education__courses-label" data-i18n="education.coursesLabel">Formación complementaria</p>
           <div class="education__courses-grid" id="courses-list"></div>
         </div>
       </div>
@@ -150,44 +152,31 @@
     <!-- ============ GALLERY / CULTURE ============ -->
     <section class="section gallery" id="cultura">
       <div class="container">
-        <h2 class="gallery__title reveal">Vivir la cultura es entender el idioma</h2>
+        <h2 class="gallery__title reveal" data-i18n="gallery.title">Vivir la cultura es entender el idioma</h2>
       </div>
       <div class="gallery__viewport">
         <!-- Tiles rendered from js/data/content.js -->
         <div class="gallery__track" id="gallery-track"></div>
-      </div>
-      <div class="gallery__controls">
-        <button class="gallery__btn" type="button" data-gallery-prev
-                aria-label="Foto anterior">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-               stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"
-               aria-hidden="true"><path d="M15 18l-6-6 6-6" /></svg>
-        </button>
-        <button class="gallery__btn" type="button" data-gallery-next
-                aria-label="Foto siguiente">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-               stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"
-               aria-hidden="true"><path d="M9 18l6-6-6-6" /></svg>
-        </button>
       </div>
     </section>
 
     <!-- ============ CONTACT ============ -->
     <section class="section contact" id="contacto">
       <div class="container container--narrow reveal">
-        <span class="eyebrow">Contacto</span>
-        <h2 class="contact__title">¿Nos tomamos un café?</h2>
-        <p class="contact__text">
+        <span class="eyebrow" data-i18n="contact.eyebrow">Contacto</span>
+        <h2 class="contact__title" data-i18n="contact.title">¿Nos tomamos un café?</h2>
+        <p class="contact__text" data-i18n="contact.text">
           Cuéntame en qué idioma sueñas, qué texto quieres pulir o a dónde
           quieres viajar.
         </p>
         <div class="contact__actions">
-          <a class="btn btn--primary" href="mailto:palciceva9@gmail.com">
+          <a class="btn btn--primary" href="mailto:palciceva9@gmail.com"
+             data-i18n="contact.cta1">
             Escríbeme un correo
           </a>
           <a class="btn btn--ghost"
              href="https://www.instagram.com/cafeconletras89.5/"
-             target="_blank" rel="noopener noreferrer">
+             target="_blank" rel="noopener noreferrer" data-i18n="contact.cta2">
             Sígueme en Café con letras
           </a>
         </div>
@@ -201,17 +190,18 @@
       <span class="site-footer__brand">Eva Palčič</span>
       <ul class="social-links" aria-label="Redes sociales">
         <li>
-          <a href="mailto:palciceva9@gmail.com" aria-label="Correo electrónico"
-             data-icon="mail"></a>
+          <a href="mailto:palciceva9@gmail.com" data-i18n-aria="footer.email"
+             aria-label="Correo electrónico" data-icon="mail"></a>
         </li>
         <li>
           <a href="https://www.instagram.com/cafeconletras89.5/" target="_blank"
-             rel="noopener noreferrer" aria-label="Instagram · Café con letras"
-             data-icon="instagram"></a>
+             rel="noopener noreferrer" data-i18n-aria="footer.instagram"
+             aria-label="Instagram · Café con letras" data-icon="instagram"></a>
         </li>
         <li>
           <a href="https://www.linkedin.com/in/evapalčič" target="_blank"
-             rel="noopener noreferrer" aria-label="LinkedIn" data-icon="linkedin"></a>
+             rel="noopener noreferrer" data-i18n-aria="footer.linkedin"
+             aria-label="LinkedIn" data-icon="linkedin"></a>
         </li>
       </ul>
       <span class="site-footer__copy">© <span id="year"></span> Eva Palčič</span>
