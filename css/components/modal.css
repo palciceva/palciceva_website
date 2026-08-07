@@ -166,10 +166,6 @@
   line-height: 1.6;
 }
 
-.experience-item__desc + .experience-item__desc {
-  margin-top: var(--space-sm);
-}
-
 /* Skill chips */
 .skill-list {
   display: flex;

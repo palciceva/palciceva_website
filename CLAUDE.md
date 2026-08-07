@@ -106,13 +106,17 @@ palciceva_website/
                             #   navigation, footer, reveal
 ```
 
-**Trilingual (ES / EN / IT).** Spanish is default; a header switch (ES · EN ·
-IT, active one underlined) changes language (saved to `localStorage`, key
-`lang`). EN & IT are translated from the Spanish original.
-- Copy lives in `js/data/content.es.js`, `content.en.js`, `content.it.js`
-  (mirror each other). `content.js` merges them into `content[lang]` + holds
-  language-independent data (photo `src`s, contact links). `LANGS` lists the
-  language codes. To add a language, add a `content.<xx>.js` + register it.
+**Four languages (ES / EN / IT / SL).** Spanish is default; a header switch
+(ES · EN · IT · SL, active one underlined) changes language (saved to
+`localStorage`, key `lang`). EN, IT & SL are translated from the Spanish
+original — Eva is a native Slovenian speaker, so treat the SL copy as
+draft-for-review.
+- Copy lives in `js/data/content.{es,en,it,sl}.js` (mirror each other).
+  `content.js` merges them into `content[lang]` + holds language-independent
+  data (photo `src`s, contact links). `LANGS` lists the codes.
+- To add a language: add `content.<xx>.js`, import + register it in
+  `content.js` (add to `content` and `LANGS`), and add a
+  `<button data-lang="<xx>">` to the switch in `index.html`.
 - **Static** HTML text uses `data-i18n` / `data-i18n-html` / `data-i18n-aria`
   attributes = dotted paths into that language's `ui` dictionary.
 - **Dynamic** sections re-render via `js/modules/i18n.js` `applyLanguage()`.
