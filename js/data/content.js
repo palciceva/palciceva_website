@@ -31,7 +31,8 @@ export const content = {
 };
 
 export const LANGS = ["es", "en", "it", "sl"];
-export const DEFAULT_LANG = "es";
+// Fallback when the device language isn't one we support.
+export const DEFAULT_LANG = "en";
 
 /** Contact + social handles (language-independent). */
 export const contact = {

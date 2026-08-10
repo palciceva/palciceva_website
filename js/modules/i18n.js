@@ -12,11 +12,29 @@ import { initProjects } from "./projects.js";
 import { initEducation } from "./education.js";
 import { updateGalleryText } from "./gallery.js";
 
-const STORAGE_KEY = "lang";
+// Versioned key: bumping it drops any stale saved choice so returning
+// visitors get fresh device-language detection.
+const STORAGE_KEY = "eva-lang-v2";
 
+/**
+ * Pick the starting language:
+ *   1. the visitor's saved choice, else
+ *   2. the device/browser language, if we support it, else
+ *   3. the default (English).
+ */
 export function getLang() {
   const saved = localStorage.getItem(STORAGE_KEY);
-  return LANGS.includes(saved) ? saved : DEFAULT_LANG;
+  if (LANGS.includes(saved)) return saved;
+
+  const prefs =
+    navigator.languages && navigator.languages.length
+      ? navigator.languages
+      : [navigator.language || ""];
+  for (const pref of prefs) {
+    const code = pref.slice(0, 2).toLowerCase();
+    if (LANGS.includes(code)) return code;
+  }
+  return DEFAULT_LANG;
 }
 
 /** Resolve a dotted path ("a.b.c") against an object. */

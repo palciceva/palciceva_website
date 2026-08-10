@@ -42,10 +42,6 @@
   font-weight: 400;
 }
 
-@media (max-width: 720px) {
-  .brand__collab { display: none; }
-}
-
 .nav {
   display: flex;
   align-items: center;
@@ -92,8 +88,19 @@
   text-decoration-thickness: 1.5px;
 }
 
-/* Mobile: collapse the nav; the name stays as anchor. */
-@media (max-width: 640px) {
-  .nav { gap: var(--space-md); }
-  .nav a:not(.nav__cta) { display: none; }
+/* Narrow screens: stack the header so brand, all nav links and the
+   language switch stay visible (centred, wrapping as needed). */
+@media (max-width: 900px) {
+  .site-header__inner {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    gap: var(--space-sm);
+    padding-block: var(--space-sm);
+  }
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-sm) var(--space-md);
+  }
 }
