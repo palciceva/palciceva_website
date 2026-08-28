@@ -102,11 +102,10 @@ export default {
       ],
       experience: [
         {
-          role: "Correttrice e assistente editoriale",
-          org: "Casa editrice dell'Università di Siviglia",
-          date: "Set 2024 – Dic 2024",
+          role: "Correttrice — *La montaña que atrapó una nube*, di Tjaša Ravnikar",
+          date: "2026",
           desc:
-            "Correzione di libri accademici, curando non solo l'ortografia e la grammatica, ma anche lo stile, la coerenza e i piccoli dettagli che rendono un testo più leggibile. Oltre a correggere ed editare, ho collaborato alla stesura di sinossi e biografie degli autori, così come alla comunicazione con loro durante il processo editoriale. Questa esperienza mi ha permesso di conoscere da vicino il percorso che un'opera compie prima di arrivare ai suoi lettori, e ha rafforzato il mio modo di intendere la correzione come una forma di cura del testo. Ho inoltre collaborato occasionalmente alla revisione e all'editing delle immagini a supporto del lavoro editoriale.",
+            "Correzione linguistica e stilistica di un racconto per bambini incentrato sull'autostima, sul pensiero positivo e sulla comunicazione.",
         },
         {
           role: "Redattrice e correttrice",
@@ -114,6 +113,13 @@ export default {
           date: "Apr 2025 – Ott 2025 · volontariato",
           desc:
             "Nella rivista FIF *Capture Life* ho lavorato come redattrice e correttrice in una pubblicazione legata al Festival di Fotografia (FIF Colombia). Il mio lavoro consisteva nel rivedere, correggere e dare forma editoriale ad articoli artistici sulla fotografia e sui fotografi partecipanti, curando lo stile, la grammatica, l'ortotipografia e la chiarezza dei testi.",
+        },
+        {
+          role: "Correttrice e assistente editoriale",
+          org: "Casa editrice dell'Università di Siviglia",
+          date: "Set 2024 – Dic 2024",
+          desc:
+            "Correzione di libri accademici, curando non solo l'ortografia e la grammatica, ma anche lo stile, la coerenza e i piccoli dettagli che rendono un testo più leggibile. Oltre a correggere ed editare, ho collaborato alla stesura di sinossi e biografie degli autori, così come alla comunicazione con loro durante il processo editoriale. Questa esperienza mi ha permesso di conoscere da vicino il percorso che un'opera compie prima di arrivare ai suoi lettori, e ha rafforzato il mio modo di intendere la correzione come una forma di cura del testo. Ho inoltre collaborato occasionalmente alla revisione e all'editing delle immagini a supporto del lavoro editoriale.",
         },
       ],
       skills: [
@@ -136,6 +142,12 @@ export default {
         "Mi considero una persona creativa, anche al di fuori dell'ambito professionale: la musica, la danza e il canto fanno parte della mia vita e del mio modo di esprimermi. Per questo la traduzione mi è così affine: richiede sensibilità, ascolto e precisione affinché un messaggio conservi la sua intenzione, il suo tono e la sua forza in un'altra lingua.",
       ],
       experience: [
+        {
+          role: "Traduttrice — *La montaña que atrapó una nube. Guía digital para padres con actividades divertidas para niños*, di Tjaša Ravnikar",
+          date: "2026",
+          desc:
+            "Traduzione dallo sloveno allo spagnolo di una guida complementare per genitori, con consigli e attività pratiche da svolgere con i bambini.",
+        },
         {
           role: "Traduzione e interpretariato",
           org: "Scuola di lingue Carlos V · Siviglia",

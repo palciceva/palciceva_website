@@ -102,18 +102,24 @@ export default {
       ],
       experience: [
         {
+          role: "Lektorica — *La montaña que atrapó una nube*, avtorice Tjaše Ravnikar",
+          date: "2026",
+          desc:
+            "Jezikovni in slogovni pregled otroške zgodbe, osredotočene na samopodobo, pozitivno mišljenje in komunikacijo.",
+        },
+        {
+          role: "Avtorica prispevkov in lektorica",
+          org: "Revija FIF · Capture Life (ed. 3)",
+          date: "Apr 2025 – Okt 2025 · prostovoljstvo",
+          desc:
+            "Pri reviji FIF *Capture Life* sem sodelovala kot avtorica prispevkov in lektorica pri publikaciji, povezani s Festivalom fotografije (FIF Kolumbija). Moje delo je obsegalo pregledovanje, lektoriranje in uredniško oblikovanje umetniških člankov o fotografiji in o sodelujočih fotografih, pri čemer sem skrbela za slog, slovnico, ortotipografijo in jasnost besedil.",
+        },
+        {
           role: "Lektorica in uredniška asistentka",
           org: "Založba Univerze v Sevilji",
           date: "Sep 2024 – Dec 2024",
           desc:
             "Lektoriranje akademskih knjig, pri katerem sem skrbela ne le za pravopis in slovnico, temveč tudi za slog, koherenco in drobne podrobnosti, zaradi katerih se besedilo bere bolje. Poleg lektoriranja in urejanja sem sodelovala pri pisanju sinopsisov in biografij avtorjev ter pri komunikaciji z njimi med uredniškim procesom. Ta izkušnja mi je omogočila, da sem od blizu spoznala pot, ki jo delo prehodi, preden pride do bralcev, in okrepila moje razumevanje lektoriranja kot oblike skrbi za besedilo. Občasno sem pomagala tudi pri pregledu in obdelavi slik v podporo uredniškemu delu.",
-        },
-        {
-          role: "Piska in lektorica",
-          org: "Revija FIF · Capture Life (ed. 3)",
-          date: "Apr 2025 – Okt 2025 · prostovoljstvo",
-          desc:
-            "Pri reviji FIF *Capture Life* sem sodelovala kot piska in lektorica pri publikaciji, povezani s Festivalom fotografije (FIF Kolumbija). Moje delo je obsegalo pregledovanje, lektoriranje in uredniško oblikovanje umetniških člankov o fotografiji in o sodelujočih fotografih, pri čemer sem skrbela za slog, slovnico, ortotipografijo in jasnost besedil.",
         },
       ],
       skills: [
@@ -136,6 +142,12 @@ export default {
         "Imam se za ustvarjalno osebo tudi zunaj poklicnega okolja: glasba, ples in petje so del mojega življenja in mojega načina izražanja. Prav zato mi je prevajanje tako blizu: zahteva občutljivost, poslušanje in natančnost, da sporočilo v drugem jeziku ohrani svoj namen, ton in moč.",
       ],
       experience: [
+        {
+          role: "Prevajalka — *La montaña que atrapó una nube. Guía digital para padres con actividades divertidas para niños*, avtorice Tjaše Ravnikar",
+          date: "2026",
+          desc:
+            "Prevod iz slovenščine v španščino dodatnega priročnika za starše s priporočili in praktičnimi dejavnostmi za otroke.",
+        },
         {
           role: "Prevajanje in tolmačenje",
           org: "Jezikovna šola Carlos V · Sevilja",

@@ -44,12 +44,12 @@ export default {
       coursesLabel: "Further training",
     },
     gallery: {
-      title: "Living the culture is understanding the language",
+      title: "Understanding a language means experiencing its culture.",
     },
     contact: {
       eyebrow: "Contact",
       title: "Shall we grab a coffee?",
-      text: "Tell me which language you dream in, which text you'd like to polish, or where you want to travel.",
+      text: "Tell me which language you dream in, which text you'd like to polish, or where you'd like to travel.",
       cta1: "Send me an email",
       cta2: "Follow me on Café con letras",
     },
@@ -96,17 +96,16 @@ export default {
       modalTitle: "Proofreading and writing",
       icon: "pen",
       tagline:
-        "Spelling, grammar and style: caring for a text is an artisan's craft.",
+        "Spelling, grammar and style: every text deserves careful attention.",
       intro: [
         "My passion for languages and literature has led me naturally to working with texts. Proofreading, writing and editing are, for me, a form of care: a meticulous craft in which every word, every nuance and every stylistic choice matters. Whether it's a book, a magazine, a thesis, an article or any other written project, my goal is for the reader to receive a high-quality product.",
       ],
       experience: [
         {
-          role: "Proofreader and editorial assistant",
-          org: "University of Seville Press",
-          date: "Sep 2024 – Dec 2024",
+          role: "Proofreader — *La montaña que atrapó una nube*, by Tjaša Ravnikar",
+          date: "2026",
           desc:
-            "Proofreading academic books, taking care not only of spelling and grammar but also of style, coherence and the small details that make a text read better. Besides proofreading and editing, I took part in writing synopses and author biographies, as well as in communicating with them throughout the editorial process. This experience let me see up close the journey a work takes before reaching its readers, and reinforced my understanding of proofreading as a way of caring for the text. I also occasionally helped review and edit images in support of the editorial work.",
+            "Linguistic and stylistic proofreading of a children's story centred on self-esteem, positive thinking and communication.",
         },
         {
           role: "Writer and proofreader",
@@ -114,6 +113,13 @@ export default {
           date: "Apr 2025 – Oct 2025 · volunteer",
           desc:
             "At FIF Magazine *Capture Life* I worked as a writer and proofreader on a publication linked to the Photography Festival (FIF Colombia). My work involved reviewing, proofreading and giving editorial shape to artistic articles about photography and the participating photographers, taking care of style, grammar, typographic conventions and the clarity of the texts.",
+        },
+        {
+          role: "Proofreader and editorial assistant",
+          org: "University of Seville Press",
+          date: "Sep 2024 – Dec 2024",
+          desc:
+            "Proofreading academic books, taking care not only of spelling and grammar but also of style, coherence and the small details that make a text read better. Besides proofreading and editing, I took part in writing synopses and author biographies, as well as in communicating with them throughout the editorial process. This experience let me see up close the different stages a work goes through before reaching its readers, and reinforced my understanding of proofreading as a way of caring for the text. I also occasionally helped review and edit images in support of the editorial work.",
         },
       ],
       skills: [
@@ -130,12 +136,18 @@ export default {
       title: "Translation",
       icon: "globe",
       tagline:
-        "Spanish, Italian, Slovenian and English: carrying across words, messages and feelings.",
+        "Spanish, Italian, Slovenian and English: carrying meaning, nuance and emotion across languages.",
       intro: [
         "Translation is very close to the way I understand languages: it's not just about moving words from one language to another, but about carrying across meanings, nuances, emotions and ways of seeing the world.",
         "I consider myself a creative person, also outside my professional life: music, dance and singing are part of my life and of how I relate to expression. That's why translation feels so natural to me: it calls for sensitivity, listening and precision so that a message keeps its intention, its tone and its strength in another language.",
       ],
       experience: [
+        {
+          role: "Translator — *La montaña que atrapó una nube. Guía digital para padres con actividades divertidas para niños*, by Tjaša Ravnikar",
+          date: "2026",
+          desc:
+            "Translation from Slovenian into Spanish of a companion guide for parents, with recommendations and practical activities to do with children.",
+        },
         {
           role: "Translation and interpreting",
           org: "Carlos V Language School · Seville",

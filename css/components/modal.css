@@ -134,19 +134,22 @@
 
 .experience-item__head {
   display: flex;
-  flex-wrap: wrap;
   align-items: baseline;
   justify-content: space-between;
-  gap: var(--space-xs);
+  gap: var(--space-md);
   margin-bottom: var(--space-2xs);
 }
 
 .experience-item__role {
   font-size: 1.2rem;
   font-weight: 500;
+  /* Take the available width and wrap internally so the date stays
+     pinned to the top-right instead of dropping below. */
+  flex: 1;
 }
 
 .experience-item__date {
+  flex-shrink: 0;
   font-family: var(--font-sans);
   font-size: 0.78rem;
   letter-spacing: 0.04em;

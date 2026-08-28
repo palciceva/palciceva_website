@@ -22,13 +22,17 @@ function renderModalContent(service, labels) {
       const descHtml = (Array.isArray(item.desc) ? item.desc : [item.desc])
         .map((para) => `<p class="experience-item__desc">${escapeWithEmphasis(para)}</p>`)
         .join("");
+      // `org` is optional; a *title* in `role` renders italic.
+      const orgHtml = item.org
+        ? `<p class="experience-item__org">${escapeHtml(item.org)}</p>`
+        : "";
       return `
       <article class="experience-item">
         <div class="experience-item__head">
-          <h4 class="experience-item__role">${escapeHtml(item.role)}</h4>
+          <h4 class="experience-item__role">${escapeWithEmphasis(item.role)}</h4>
           <span class="experience-item__date">${escapeHtml(item.date)}</span>
         </div>
-        <p class="experience-item__org">${escapeHtml(item.org)}</p>
+        ${orgHtml}
         ${descHtml}
       </article>`;
     })
