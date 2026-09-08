@@ -21,8 +21,8 @@
   text-align: left;
   width: 100%;
   padding: var(--space-xl) var(--space-lg) var(--space-lg);
-  /* Stronger sage fill (colour block) with a light cream border. */
-  background-color: color-mix(in srgb, var(--color-accent) 44%, var(--color-surface));
+  /* Latte colour block with a light cream border. */
+  background-color: var(--color-block);
   border: 1px solid color-mix(in srgb, #ffffff 45%, var(--color-surface));
   border-radius: var(--radius-md);
   color: var(--color-text);
@@ -37,6 +37,24 @@
   transform: translateY(-6px);
   box-shadow: 0 24px 44px -28px var(--color-shadow);
   background-color: color-mix(in srgb, var(--color-accent) 52%, var(--color-surface));
+}
+
+/* --- Pop-up entrance on scroll-in --------------------------
+   The cards spring up (scale + fade) with a gentle overshoot,
+   staggered left-to-right, when the section enters view. */
+.service-card.reveal {
+  transform: scale(0.9);
+  transition: opacity var(--dur-slow) var(--ease),
+              transform 0.55s cubic-bezier(0.34, 1.55, 0.5, 1);
+}
+.service-card.reveal.is-visible {
+  transform: scale(1);
+}
+.service-card:nth-child(2).reveal { transition-delay: 0.09s; }
+.service-card:nth-child(3).reveal { transition-delay: 0.18s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .service-card.reveal { transform: none; transition: none; }
 }
 
 .service-card__title {

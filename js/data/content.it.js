@@ -76,6 +76,10 @@ export default {
         {
           role: "Insegnante di spagnolo online",
           org: "MANU Language Factory",
+          link: {
+            url: "https://manulanguagefactory.com",
+            label: "manulanguagefactory.com",
+          },
           date: "Gen 2026 – oggi",
           desc:
             "Lezioni di spagnolo online per studenti sloveni e stranieri, con spiegazioni in spagnolo, sloveno e inglese. Lavoro con studenti di diverse età e profili, adattando il ritmo, i materiali e le risorse didattiche alle esigenze di ciascuno.",

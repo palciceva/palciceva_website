@@ -43,8 +43,8 @@ em { font-style: italic; }
   font-weight: 500;
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
-  /* Soft, glassy sage — same tone as the "Hispanista · Italianista" line. */
-  color: var(--color-accent-glass);
+  /* Dark roast — consistent across all eyebrow labels. */
+  color: var(--color-accent-deep);
 }
 
 .lead {

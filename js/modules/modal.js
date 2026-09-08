@@ -26,6 +26,11 @@ function renderModalContent(service, labels) {
       const orgHtml = item.org
         ? `<p class="experience-item__org">${escapeHtml(item.org)}</p>`
         : "";
+      // Optional website chip (opens in a new tab).
+      const linkHtml = item.link
+        ? `<a class="experience-item__link" href="${escapeHtml(item.link.url)}"
+              target="_blank" rel="noopener noreferrer">${escapeHtml(item.link.label)} ${icons.arrow}</a>`
+        : "";
       return `
       <article class="experience-item">
         <div class="experience-item__head">
@@ -34,6 +39,7 @@ function renderModalContent(service, labels) {
         </div>
         ${orgHtml}
         ${descHtml}
+        ${linkHtml}
       </article>`;
     })
     .join("");

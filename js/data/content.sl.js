@@ -76,6 +76,10 @@ export default {
         {
           role: "Učiteljica španščine (online)",
           org: "MANU Language Factory",
+          link: {
+            url: "https://manulanguagefactory.com",
+            label: "manulanguagefactory.com",
+          },
           date: "Jan 2026 – danes",
           desc:
             "Spletni pouk španščine za slovenske in tuje učence, z razlagami v španščini, slovenščini in angleščini. Delam z učenci različnih starosti in profilov ter prilagajam tempo, gradiva in učne vire potrebam vsakega posameznika.",

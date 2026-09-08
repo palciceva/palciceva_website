@@ -51,21 +51,23 @@ Deployment target: **GitHub Pages** (repo `palciceva/palciceva_website`).
   them in `assets/fonts/` via `@font-face` and update `--font-serif` /
   `--font-sans` — no other change needed. Body weight is 500 (Cormorant renders
   light). She likes Garamond-style serifs generally.
-- **Palette: sage / olive / cream / espresso** (Eva's chosen swatches).
-  Defined as tokens in `css/base/variables.css` — change the whole skin there.
-  Source swatches & their roles:
-  1. **Espresso** `#332821` → `--color-text`, primary text (dark brown).
-  2. **Cream** `#E9E1D2` → `--color-surface-alt` (the alternating section
-     background); the page `--color-bg` is a lifted cream `#f2ece1`, cards
-     `--color-surface` a near-white `#f8f4ec`.
-  3. **Sage** `#868264` → `--color-accent`, the highlight tone: title accents
-     (lenguas/letras/culturas), service icons, "Descubre mis servicios" hover.
-     Its translucent form `--color-accent-glass` is used by all `.eyebrow`
-     labels and the service-card borders/numbers/"Ver más".
-  4. **Taupe** `#86755F` → `--color-text-muted`, secondary text.
-  5. **Dark olive** `#5B563B` → `--color-accent-deep`, links / hover.
-  White is fine for small details. Keep the soft background **change between
-  sections** (Proyectos uses `--color-surface-alt`); Eva likes that alternation.
+- **Palette: cream + coffee.** A light warm cream page contrasted with coffee
+  brown. Defined as tokens in `css/base/variables.css` — change the whole skin
+  there. Backgrounds: `--color-bg` `#faf7f0` (page), `--color-surface` `#fbf9f4`
+  (cards), `--color-surface-alt` `#efe8db` (alt sections), and the **latte mid
+  tone** `--color-block` (= `color-mix(accent 44%, surface)`) — the shared fill
+  for service cards, the Proyectos section background, the modal quote box and
+  the primary-button hover ("only 3 tones of colour" for blocks, per Eva).
+  - **LETTERS ONLY EVER USE TWO COLOURS** (Eva's explicit rule): **dark brown**
+    `#332821` (`--color-text`, and `--color-accent-deep` is aliased to it) and
+    **light brown** `#7a5640` (`--color-text-muted`, = `--color-accent`, the
+    coffee tone of the Proyectos background). Dark = headings, all eyebrows/
+    labels, hero body, card titles/taglines, links, "Ver más", buttons on cream.
+    Light brown = nav & brand, and all secondary/detail text (descriptions,
+    dates, institutions, footer copy, gallery captions). Do NOT introduce a
+    third ink tone. (`--color-accent-glass` is now unused.)
+  - The **one green** `--color-green` `#868264` is used only as the underline
+    under the active language in the switch. Keep green to that single accent.
   NOTE: palette is still being tuned — she may keep iterating on colours.
   (A gold-accent + rotating-seal + script-signature experiment was tried and
   reverted — Eva did not like the gold. Avoid re-introducing gold unprompted.)

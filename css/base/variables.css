@@ -4,23 +4,32 @@
    ============================================================ */
 
 :root {
-  /* --- Colour palette: sage / olive / cream / espresso ----
-     Source swatches:
-       #5B563B dark olive · #868264 sage · #E9E1D2 cream
-       #86755F taupe      · #332821 espresso
+  /* --- Colour palette: cream + coffee ---------------------
+     A light warm cream contrasted with dark coffee brown.
+     Green is kept as a single accent (--color-green), used
+     only in a few places.
      ------------------------------------------------------- */
-  --color-bg:            #f2ece1; /* light cream (cream swatch, lifted) */
-  --color-surface:       #f8f4ec; /* near-white warm — cards            */
-  --color-surface-alt:   #e9e1d2; /* cream swatch — alternating section */
-  --color-text:          #332821; /* espresso — primary text            */
-  --color-text-muted:    #86755f; /* taupe — secondary text             */
-  --color-accent:        #868264; /* sage — highlights                  */
-  --color-accent-deep:   #5b563b; /* dark olive — links/hover           */
-  --color-line:          #ddd4c4; /* warm hairline borders              */
-  --color-shadow:        rgba(51, 40, 33, 0.10);
+  --color-bg:            #faf7f0; /* light warm cream — background       */
+  --color-surface:       #fbf9f4; /* near-white — cards                  */
+  --color-surface-alt:   #efe8db; /* deeper cream — alternating section  */
+  /* Letters only ever use two colours: dark brown + light brown (latte). */
+  --color-text:          #332821;            /* dark brown — primary text/labels  */
+  --color-text-muted:    var(--color-block); /* light brown latte — secondary text
+                                                (same tone as the Proyectos bg)   */
+  --color-accent:        #7a5640;            /* coffee — base for latte fills only */
+  --color-accent-deep:   #332821;            /* dark brown — eyebrows, links       */
+  --color-line:          #e7ded0; /* light warm hairline borders         */
+  --color-shadow:        rgba(51, 38, 29, 0.10);
 
-  /* Soft, translucent "glassy" sage for eyebrow labels. */
-  --color-accent-glass:  color-mix(in srgb, var(--color-accent) 60%, transparent);
+  /* The single green accent — used only in a few places.    */
+  --color-green:         #868264;
+
+  /* Latte block — the mid tone: service cards, the projects
+     section background, the modal quote box, the button hover. */
+  --color-block:         color-mix(in srgb, var(--color-accent) 44%, var(--color-surface));
+
+  /* Soft, translucent "glassy" coffee for eyebrow labels.   */
+  --color-accent-glass:  color-mix(in srgb, var(--color-accent) 55%, transparent);
 
   /* --- Typography ----------------------------------------
      Serif  ("Goldenbook" → Cormorant Garamond stand-in)

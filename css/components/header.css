@@ -1,14 +1,13 @@
 /* ============================================================
-   Site header — minimal, sticky, with a subtle blur on scroll.
+   Site header — minimal, sticky. Solid page-cream background so
+   nothing (e.g. the gallery photos) tints through it.
    ============================================================ */
 
 .site-header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: color-mix(in srgb, var(--color-bg) 82%, transparent);
-  backdrop-filter: saturate(140%) blur(10px);
-  -webkit-backdrop-filter: saturate(140%) blur(10px);
+  background-color: var(--color-bg);
   border-bottom: 1px solid transparent;
   transition: border-color var(--dur) var(--ease),
               background-color var(--dur) var(--ease);
@@ -83,7 +82,7 @@
 .lang-switch button.is-active {
   color: var(--color-text);
   text-decoration: underline;
-  text-decoration-color: var(--color-accent);
+  text-decoration-color: var(--color-green);
   text-underline-offset: 4px;
   text-decoration-thickness: 1.5px;
 }

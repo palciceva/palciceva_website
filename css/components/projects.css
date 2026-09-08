@@ -3,7 +3,7 @@
    ============================================================ */
 
 .projects {
-  background-color: var(--color-surface-alt);
+  background-color: var(--color-block);
 }
 
 .projects__grid {
@@ -33,7 +33,7 @@
   font-size: 0.76rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: var(--color-accent-deep);
   margin-bottom: var(--space-sm);
 }
 
@@ -58,7 +58,8 @@
 }
 
 .project-card__desc {
-  color: var(--color-text-muted);
+  /* Dark brown for full legibility (not the pale latte). */
+  color: var(--color-text);
   line-height: 1.6;
   margin-bottom: var(--space-lg);
   flex-grow: 1;

@@ -62,14 +62,14 @@
   transform: scale(1.04);
 }
 
-/* Caption under a tile — centred, italic, light green;
-   darkens on hover so it comes forward with the photo. */
+/* Caption under a tile — centred, italic, light brown;
+   darkens to dark brown on hover so it comes forward with the photo. */
 .gallery__caption {
   margin-top: var(--space-sm);
   text-align: center;
   font-style: italic;
   font-size: 0.98rem;
-  color: var(--color-accent-glass);
+  color: var(--color-text-muted);
   transition: color var(--dur) var(--ease);
 }
 

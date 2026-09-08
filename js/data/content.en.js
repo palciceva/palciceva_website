@@ -76,6 +76,10 @@ export default {
         {
           role: "Online Spanish teacher",
           org: "MANU Language Factory",
+          link: {
+            url: "https://manulanguagefactory.com",
+            label: "manulanguagefactory.com",
+          },
           date: "Jan 2026 – present",
           desc:
             "Online Spanish classes for Slovenian and international students, with explanations in Spanish, Slovenian and English. I work with students of different ages and backgrounds, adapting the pace, materials and teaching resources to each person's needs.",

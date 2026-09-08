@@ -49,7 +49,7 @@ export default {
     contact: {
       eyebrow: "Contacto",
       title: "¿Nos tomamos un café?",
-      text: "Cuéntame en qué idioma sueñas, qué texto quieres pulir o a dónde quieres viajar.",
+      text: "Cuéntame en qué idioma sueñas, qué texto quieres pulir o adónde quieres viajar.",
       cta1: "Escríbeme un correo",
       cta2: "Sígueme en Café con letras",
     },
@@ -76,6 +76,10 @@ export default {
         {
           role: "Profesora de español online",
           org: "MANU Language Factory",
+          link: {
+            url: "https://manulanguagefactory.com",
+            label: "manulanguagefactory.com",
+          },
           date: "Ene 2026 – actualidad",
           desc:
             "Clases de español en línea para estudiantes eslovenos y extranjeros, con explicaciones en español, esloveno e inglés. Trabajo con alumnado de distintas edades y perfiles, adaptando el ritmo, los materiales y los recursos didácticos a las necesidades de cada persona.",

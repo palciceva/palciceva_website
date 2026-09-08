@@ -26,8 +26,8 @@
 }
 
 .btn--primary:hover {
-  /* Soft taupe (same tone as the title accents) with a gentle lift. */
-  background-color: var(--color-accent);
+  /* Lightens from espresso to the latte block, with dark text. */
+  background-color: var(--color-block);
   color: var(--color-text);
   transform: translateY(-2px);
   box-shadow: 0 12px 26px -14px var(--color-shadow);

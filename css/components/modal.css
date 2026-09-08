@@ -55,7 +55,7 @@
   font-family: var(--font-sans);
   font-size: 0.78rem;
   letter-spacing: 0.16em;
-  color: var(--color-accent);
+  color: var(--color-accent-deep);
   margin-bottom: var(--space-xs);
 }
 
@@ -95,7 +95,7 @@
   line-height: 1.6;
   margin-bottom: var(--space-xl);
   padding: var(--space-lg);
-  background-color: color-mix(in srgb, var(--color-accent) 44%, var(--color-surface));
+  background-color: var(--color-block);
   border: 1px solid color-mix(in srgb, #ffffff 45%, var(--color-surface));
   border-radius: var(--radius-md);
 }
@@ -116,7 +116,7 @@
   font-size: 0.76rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: var(--color-accent-deep);
   margin-bottom: var(--space-md);
 }
 
@@ -167,6 +167,35 @@
   color: var(--color-text-muted);
   font-size: 1rem;
   line-height: 1.6;
+}
+
+/* Website chip — a clickable pill like the skill chips. */
+.experience-item__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  margin-top: var(--space-sm);
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  color: var(--color-accent-deep);
+  padding: 0.4em 0.95em;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-line);
+  border-radius: 100px;
+  transition: background-color var(--dur-fast) var(--ease),
+              border-color var(--dur-fast) var(--ease);
+}
+
+.experience-item__link:hover {
+  background-color: var(--color-block);
+  border-color: var(--color-accent);
+}
+
+.experience-item__link svg {
+  width: 13px;
+  height: 13px;
+  transform: rotate(-45deg); /* → becomes ↗ */
 }
 
 /* Skill chips */
