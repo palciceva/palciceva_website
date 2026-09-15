@@ -78,7 +78,7 @@
 }
 
 .modal__close:hover {
-  background-color: var(--color-surface-alt);
+  background-color: color-mix(in srgb, var(--color-text) 8%, var(--color-surface));
   color: var(--color-text);
 }
 
@@ -86,17 +86,17 @@
   padding: var(--space-lg) var(--space-xl) var(--space-xl);
 }
 
-/* The personal "quote" sits in a green box — same sage tone as the
-   service cards, with a light cream border. */
+/* The personal "quote" sits in a dark-brown box with white letters —
+   the same white↔brown contrast as the service cards. */
 .modal__intro {
   font-size: var(--fs-lead);
   font-style: italic;
-  color: var(--color-text);
+  color: var(--color-bg);
   line-height: 1.6;
   margin-bottom: var(--space-xl);
   padding: var(--space-lg);
-  background-color: var(--color-block);
-  border: 1px solid color-mix(in srgb, #ffffff 45%, var(--color-surface));
+  background-color: var(--color-text);
+  border: 1px solid var(--color-text);
   border-radius: var(--radius-md);
 }
 
@@ -141,8 +141,9 @@
 }
 
 .experience-item__role {
-  font-size: 1.2rem;
-  font-weight: 500;
+  font-size: 1.4rem;
+  /* Bold + larger so the job/experience name clearly leads its entry. */
+  font-weight: 600;
   /* Take the available width and wrap internally so the date stays
      pinned to the top-right instead of dropping below. */
   flex: 1;
@@ -188,8 +189,9 @@
 }
 
 .experience-item__link:hover {
-  background-color: var(--color-block);
-  border-color: var(--color-accent);
+  background-color: var(--color-text);
+  border-color: var(--color-text);
+  color: var(--color-bg);
 }
 
 .experience-item__link svg {

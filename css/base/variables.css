@@ -9,15 +9,15 @@
      Green is kept as a single accent (--color-green), used
      only in a few places.
      ------------------------------------------------------- */
-  --color-bg:            #faf7f0; /* light warm cream — background       */
-  --color-surface:       #fbf9f4; /* near-white — cards                  */
-  --color-surface-alt:   #efe8db; /* deeper cream — alternating section  */
-  /* Letters only ever use two colours: dark brown + light brown (latte). */
-  --color-text:          #332821;            /* dark brown — primary text/labels  */
-  --color-text-muted:    var(--color-block); /* light brown latte — secondary text
-                                                (same tone as the Proyectos bg)   */
-  --color-accent:        #7a5640;            /* coffee — base for latte fills only */
-  --color-accent-deep:   #332821;            /* dark brown — eyebrows, links       */
+  --color-bg:            #ffffff; /* white — background                  */
+  --color-surface:       #ffffff; /* white — cards                       */
+  --color-surface-alt:   #ffffff; /* white — (kept for API compatibility) */
+  /* Strict two-colour contrast: on white -> dark-brown letters,
+     on dark brown -> white letters. Nothing in between.               */
+  --color-text:          #523a27; /* dark brown — clearly brown, not black */
+  --color-text-muted:    #523a27; /* same dark brown (secondary text)    */
+  --color-accent:        #7a5640; /* coffee — legacy, used only in mixes */
+  --color-accent-deep:   #523a27; /* dark brown — eyebrows, links        */
   --color-line:          #e7ded0; /* light warm hairline borders         */
   --color-shadow:        rgba(51, 38, 29, 0.10);
 

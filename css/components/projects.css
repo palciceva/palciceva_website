@@ -3,7 +3,13 @@
    ============================================================ */
 
 .projects {
-  background-color: var(--color-block);
+  background-color: var(--color-text);
+}
+
+/* Section head sits on the dark-brown band -> white letters. */
+.projects .section-head .eyebrow,
+.projects .section-head h2 {
+  color: var(--color-bg);
 }
 
 .projects__grid {
@@ -19,6 +25,8 @@
   background-color: var(--color-surface);
   border: 1px solid var(--color-line);
   border-radius: var(--radius-md);
+  /* Soft resting shadow so white cards lift off the white section. */
+  box-shadow: 0 12px 34px -24px var(--color-shadow);
   transition: transform var(--dur) var(--ease),
               box-shadow var(--dur) var(--ease);
 }

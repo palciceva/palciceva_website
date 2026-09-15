@@ -48,6 +48,7 @@
 }
 
 .nav a {
+  position: relative;
   font-family: var(--font-sans);
   font-size: 0.74rem;
   font-weight: 500;
@@ -57,7 +58,22 @@
   transition: color var(--dur-fast) var(--ease);
 }
 
+/* Underline wipes in from the left on hover. */
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px;
+  height: 1px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--dur) var(--ease);
+}
+
 .nav a:hover { color: var(--color-text); }
+.nav a:hover::after { transform: scaleX(1); }
 
 /* Language switch — ES / EN / IT, the active one underlined in sage. */
 .lang-switch {

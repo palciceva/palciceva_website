@@ -85,16 +85,6 @@
   box-shadow: 0 30px 60px -30px var(--color-shadow);
 }
 
-/* Frame outline offset behind the portrait (no fill). */
-.hero__portrait::before {
-  content: "";
-  position: absolute;
-  inset: -20px -20px 20px 20px;
-  border: 1px solid var(--color-line);
-  border-radius: var(--radius-lg);
-  z-index: -1;
-}
-
 @media (max-width: 860px) {
   .hero { padding-block: var(--space-2xl); }
   .hero__grid {
