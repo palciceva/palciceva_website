@@ -44,7 +44,7 @@ export default {
       coursesLabel: "Further training",
     },
     gallery: {
-      title: "Understanding a language means experiencing its culture.",
+      title: "Understanding a language means experiencing its culture",
     },
     contact: {
       eyebrow: "Contact",

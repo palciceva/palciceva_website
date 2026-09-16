@@ -44,7 +44,7 @@ export default {
       coursesLabel: "Formazione complementare",
     },
     gallery: {
-      title: "Capire una lingua significa vivere la sua cultura.",
+      title: "Capire una lingua significa vivere la sua cultura",
     },
     contact: {
       eyebrow: "Contatti",
