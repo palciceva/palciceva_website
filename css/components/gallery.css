@@ -30,10 +30,15 @@
 }
 .gallery__viewport::-webkit-scrollbar { display: none; }
 
-/* While autoplay runs, gallery.js drives horizontal swipes itself; the
-   browser keeps only vertical panning, so the page still scrolls. */
+/* While autoplay runs, gallery.js moves the track by transform and drives
+   horizontal swipes itself; the browser keeps only vertical panning, so the
+   page still scrolls. (Reduced-motion users keep the native scroller.) */
 .gallery__viewport.is-swipeable {
+  overflow: hidden;
   touch-action: pan-y;
+}
+.gallery__viewport.is-swipeable .gallery__track {
+  will-change: transform;
 }
 
 .gallery__track {
