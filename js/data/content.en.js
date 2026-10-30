@@ -20,9 +20,9 @@ export default {
       titleHtml:
         'Between <span class="accent">languages</span>,<br /><span class="accent">letters</span> and <span class="accent">cultures</span>',
       rolesHtml:
-        "<span>Classes</span><span>Proofreading</span><span>Translation</span>",
+        "<span>Classes</span><span>Copyediting</span><span>Translation</span>",
       introHtml:
-        "<p>I'm Eva, a Hispanist and Italianist passionate about languages, literature and the cultures that give them life. My work springs from one conviction: learning a language is not only about knowing its words and grammar rules, but also about drawing closer to its history, its accents, its people and its way of understanding the world.</p><p>From that outlook, I teach, proofread, write and translate with care, discipline and creativity.</p>",
+        "<p>I'm Eva, a Hispanist and Italianist passionate about languages, literature and the cultures that give them life. My work springs from one conviction: learning a language is not only about knowing its words and grammar rules, but also about drawing closer to its history, its accents, its people and its way of understanding the world.</p><p>From that outlook, I teach, copyedit, write and translate with care, discipline and creativity.</p>",
       cta1: "Discover my services",
       cta2: "Let's talk",
     },
@@ -96,34 +96,34 @@ export default {
     },
     {
       id: "correccion",
-      title: "Proofreading",
-      modalTitle: "Proofreading and writing",
+      title: "Copyediting",
+      modalTitle: "Copyediting and writing",
       icon: "pen",
       tagline:
         "Spelling, grammar and style: every text deserves careful attention.",
       intro: [
-        "My passion for languages and literature has led me naturally to working with texts. Proofreading, writing and editing are, for me, a form of care: a meticulous craft in which every word, every nuance and every stylistic choice matters. Whether it's a book, a magazine, a thesis, an article or any other written project, my goal is for the reader to receive a high-quality product.",
+        "My passion for languages and literature has led me naturally to working with texts. Copyediting, writing and editing are, for me, a form of care: a meticulous craft in which every word, every nuance and every stylistic choice matters. Whether it's a book, a magazine, a thesis, an article or any other written project, my goal is for the reader to receive a high-quality product.",
       ],
       experience: [
         {
-          role: "Proofreader — *La montaña que atrapó una nube*, by Tjaša Ravnikar",
+          role: "Copyeditor — *La montaña que atrapó una nube*, by Tjaša Ravnikar",
           date: "2026",
           desc:
-            "Linguistic and stylistic proofreading of a children's story centred on self-esteem, positive thinking and communication.",
+            "Linguistic and stylistic copyediting of a children's story centred on self-esteem, positive thinking and communication.",
         },
         {
-          role: "Writer and proofreader",
+          role: "Writer and copyeditor",
           org: "FIF Magazine · Capture Life (ed. 3)",
           date: "Apr 2025 – Oct 2025 · volunteer",
           desc:
-            "At FIF Magazine *Capture Life* I worked as a writer and proofreader on a publication linked to the Photography Festival (FIF Colombia). My work involved reviewing, proofreading and giving editorial shape to artistic articles about photography and the participating photographers, taking care of style, grammar, typographic conventions and the clarity of the texts.",
+            "At FIF Magazine *Capture Life* I worked as a writer and copyeditor on a publication linked to the Photography Festival (FIF Colombia). My work involved reviewing, copyediting and giving editorial shape to artistic articles about photography and the participating photographers, taking care of style, grammar, typographic conventions and the clarity of the texts.",
         },
         {
-          role: "Proofreader and editorial assistant",
+          role: "Copyeditor and editorial assistant",
           org: "University of Seville Press",
           date: "Sep 2024 – Dec 2024",
           desc:
-            "Proofreading academic books, taking care not only of spelling and grammar but also of style, coherence and the small details that make a text read better. Besides proofreading and editing, I took part in writing synopses and author biographies, as well as in communicating with them throughout the editorial process. This experience let me see up close the different stages a work goes through before reaching its readers, and reinforced my understanding of proofreading as a way of caring for the text. I also occasionally helped review and edit images in support of the editorial work.",
+            "Copyediting academic books, taking care not only of spelling and grammar but also of style, coherence and the small details that make a text read better. Besides copyediting and editing, I took part in writing synopses and author biographies, as well as in communicating with them throughout the editorial process. This experience let me see up close the different stages a work goes through before reaching its readers, and reinforced my understanding of copyediting as a way of caring for the text. I also occasionally helped review and edit images in support of the editorial work.",
         },
       ],
       skills: [
