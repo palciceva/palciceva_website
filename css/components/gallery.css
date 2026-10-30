@@ -30,6 +30,12 @@
 }
 .gallery__viewport::-webkit-scrollbar { display: none; }
 
+/* While autoplay runs, gallery.js drives horizontal swipes itself; the
+   browser keeps only vertical panning, so the page still scrolls. */
+.gallery__viewport.is-swipeable {
+  touch-action: pan-y;
+}
+
 .gallery__track {
   display: flex;
   align-items: flex-start;

@@ -3,6 +3,8 @@
  *
  * The strip drifts slowly and continuously on its own. Resting the mouse
  * near the right edge speeds it up; near the left edge it runs backwards.
+ * On touch screens a swipe drags the strip, flings it with the swipe's
+ * momentum, and the drift then carries on in the swiped direction.
  * The photo set is rendered twice so the motion loops seamlessly.
  * Autoplay is skipped for reduced-motion users (they can still scroll it
  * by hand — the viewport stays horizontally scrollable).
@@ -65,6 +67,16 @@ export function initGallery(photos) {
   let speed = BASE;    // current speed
   let pos = 0;         // our own float scroll position (avoids sub-pixel stalls)
   let setWidth = 0;    // width of one photo set (wrap distance)
+  let dir = 1;         // drift direction: 1 forwards, -1 backwards (last swipe)
+
+  let dragging = false; // a finger is dragging the strip
+  let lastX = 0;        // finger x at the previous pointermove
+  let dragDelta = 0;    // finger travel since the last frame (px)
+  let dragTotal = 0;    // net travel of the current swipe (px)
+
+  // Touch drags are handled here, not by native scrolling, so they can't
+  // fight the loop; vertical swipes still scroll the page (see gallery.css).
+  viewport.classList.add("is-swipeable");
 
   const measure = () => {
     const n = photos.length;
@@ -78,8 +90,14 @@ export function initGallery(photos) {
 
   const loop = () => {
     if (!setWidth) measure();
-    speed += (target - speed) * 0.08; // ease toward the target speed
-    pos += speed;
+    if (dragging) {
+      pos += dragDelta;
+      speed += (dragDelta - speed) * 0.5; // finger velocity, kept for the fling
+      dragDelta = 0;
+    } else {
+      speed += (target - speed) * 0.08; // ease toward the target speed
+      pos += speed;
+    }
     if (setWidth > 0) {
       if (pos >= setWidth) pos -= setWidth;
       else if (pos < 0) pos += setWidth;
@@ -88,15 +106,42 @@ export function initGallery(photos) {
     requestAnimationFrame(loop);
   };
 
-  viewport.addEventListener("mousemove", (event) => {
+  viewport.addEventListener("pointerdown", (event) => {
+    if (event.pointerType === "mouse") return;
+    dragging = true;
+    lastX = event.clientX;
+    dragDelta = 0;
+    dragTotal = 0;
+  });
+
+  viewport.addEventListener("pointermove", (event) => {
+    if (event.pointerType !== "mouse") {
+      if (!dragging) return;
+      const dx = lastX - event.clientX; // finger left = strip forwards
+      lastX = event.clientX;
+      dragDelta += dx;
+      dragTotal += dx;
+      return;
+    }
+    // Edge hot zones are for a real mouse only — a tap would leave them stuck.
     const rect = viewport.getBoundingClientRect();
     const x = event.clientX - rect.left;
     if (x > rect.width * (1 - EDGE)) target = FAST;
     else if (x < rect.width * EDGE) target = REVERSE;
-    else target = BASE;
+    else target = dir * BASE;
   });
-  viewport.addEventListener("mouseleave", () => {
-    target = BASE;
+
+  const release = () => {
+    if (!dragging) return;
+    dragging = false;
+    if (Math.abs(dragTotal) > 10) dir = Math.sign(dragTotal); // ignore taps
+    target = dir * BASE; // the fling eases back into the swiped direction
+  };
+  viewport.addEventListener("pointerup", release);
+  viewport.addEventListener("pointercancel", release); // e.g. page scrolled
+
+  viewport.addEventListener("pointerleave", (event) => {
+    if (event.pointerType === "mouse") target = dir * BASE;
   });
 
   requestAnimationFrame(loop);
